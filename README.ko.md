@@ -646,7 +646,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-then"></a>
-  복수행에 대한 `if/unless`문에 `then`을 절대 쓰지마라.
+  `if/unless`문의 내용이 여러줄일 때에는`then`을 절대 쓰지마라.
 <sup>[[link](#no-then)]</sup>
 
   ```Ruby
@@ -662,9 +662,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="same-line-condition"></a>
-  복수행의 조건문에서 조건은 항상 `if`/`unless`와 같은 행에 넣어라.
-  (!todo)Always put the condition on the same line as the `if`/`unless` in a
-  multi-line conditional.
+  조건문의 내용이 여러 줄일 때,
+  조건식은 항상 `if/unless`와 같은 줄에 넣어라.
 <sup>[[link](#same-line-condition)]</sup>
 
   ```Ruby
@@ -730,10 +729,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#no-semicolon-ifs)]</sup>
 
 * <a name="use-if-case-returns"></a>
-  !todo
-  Leverage the fact that `if` and `case` are expressions which return a
-  result.
-  `if`와 `case`는 결과를 반환하는 표현식이므로 이용하라.
+  `if`와 `case`은 결과를 반환하는 표현식이라는 사실을 이용하라.
 <sup>[[link](#use-if-case-returns)]</sup>
 
   ```Ruby
@@ -1876,7 +1872,7 @@ PDF나 HTML로 복사해갈 수 있다.
   이것은 2차 이상의 배열에는 적용되지는 않는다.
   다시 말해서, `users.first.songs == ['a', ['b','c']]` 이 경우는
   `flat_map`보다는 `map + flatten`를 사용하라.
-  `flat_map`은 1차원의 배열만 1차원으로 만드는 반면 `flatten`은 모든것을 1차원 배열로 만든다.
+  `flat_map`은 1차원의 배열만 1차원으로 만드는 반면, `flatten`은 모든것을 1차원 배열로 만든다.
 <sup>[[link](#flat-map)]</sup>
 
   ```Ruby
