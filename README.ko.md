@@ -1308,12 +1308,10 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-case-equality"></a>
-  case동등연산자(case equality) `===`의 명시적인 사용을 피하라.
-  이름에서 암시하듯, `case`표현식 
-  (!todo)
-  As its name implies
-  it is meant to be used implicitly by `case` expressions
-  and outside of them it yields some pretty confusing code.
+  case동등(case equality) 연산자 `===`를 문자 그대로 사용하는 것을 피하라.
+  왜냐하면 그 이름에서 암시하듯, 이 연산자는 암묵적으로 `case`의 (동등 여부 뿐만아니라)
+  상태를 판별하는 데에 사용되도록 고안되었기 때문에,
+  외부에서 본다면 약간 혼란스러운 코드가 된다.
 <sup>[[link](#no-case-equality)]</sup>
 
   ```Ruby
@@ -1543,8 +1541,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="predicate-methods"></a>
-  `==`로 비교하기 보다 판정메소드를 사용하는 것이 더 좋다.
-  숫자 비교는 괜찮다. (!todo) ??
+  `==`로 비교하기 보다 서술형 메소드(predicate methods)를 사용하는 것이 더 좋다.
+  숫자 비교는 괜찮다.
 <sup>[[link](#predicate-methods)]</sup>
 
   ```Ruby
@@ -1765,7 +1763,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="bool-methods-qmark"></a>
-  조건판정 메소드(boolean값을 반환하는 메소드들)의 이름은 꼭 물음표로 끝나야 한다.(예.`Array#empty?`)
+  서술형 메소드(boolean값을 반환하는 메소드들)의 이름은 꼭 물음표로 끝나야 한다.(다시말해`Array#empty?`)
   메소드가 boolean값을 반환하는게 아니라면, 물음표로 끝나선 안된다.
 <sup>[[link](#bool-methods-qmark)]</sup>
 
