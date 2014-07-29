@@ -15,10 +15,15 @@
 그러나 루비 커뮤니티에 의해 자체적으로 수립된 예제, 숙어, 스타일에 관한
 프로그래밍 방식 역시 많은 관련자들에게 도움이 될 것이다.
 
-(!todo)
+가이드를 작성하기 시작한 때부터 본인은 여러 유수의 루비 커뮤니티로부터 소중한 피드백을 받았다.
+여러 분들의 그러한  협력과 노고에 다시 한 번 감사의 말씀을 올린다.
+많은 분들의 도움이 있었기에 가이드를 작성할 수 있었고,
+그러한 상호작용을 통해 여타의 모든 루비 개발 관계자들에게 도움될 수 있으리라 본다.
 
-만약 Rails를 한다면, 다음의 가이드라인 완성도 확인해보기 바란다.
-[Ruby on Rails 3 & 4 Style Guide](https://github.com/bbatsov/rails-style-guide).
+한가지 더, Rails에 관심 있는 사람이라면,
+추가적으로 필요한 부분은
+[Ruby on Rails 3 & 4 Style Guide](https://github.com/bbatsov/rails-style-guide)을
+참고하면 된다.
 
 # 루비 스타일 가이드
 
@@ -614,17 +619,12 @@ PDF나 HTML로 복사해갈 수 있다.
    ```
 
 * <a name="no-for-loops"></a>
-    !todo
-    Never use `for`, unless you know exactly why. Most of the time iterators
-    should be used instead. `for` is implemented in terms of `each`
-     (so you're adding a level of indirection),
-      but with a twist - `for`
-    doesn't introduce a new scope (unlike `each`) and variables defined
-    in its block will be visible outside it.
-    왜 써야하는지 정확히 모른다면 `for`을 쓰지 마라. 대신 대부분의의 경우 반복자가
-    쓰인다. `for`는 `each`구문들로 구현되어 있다. (간접적으로 단계를 추가하게 된다.)
-
-
+    `for`을 쓸 때에는 정확히 그 용법을 알고 있을 때에만 사용해야 한다.
+    대개의 경우 반복자(iterator)가 `for` 대신 사용된다.
+    `for` 구문은 `each` 의 관점에서 실행되기 때문에 일종의 우회적인 방식을 사용하지만,
+    `each` 용법과는 다른 점이 있다.
+    즉, `for`은 `each`와는 다르게 새로운 영역을 생성하는 것이 아니기 때문에,
+    `for` 구문 내부에서 정의된 변수들은 `for` 외부에서도 접근 가능하다.
 <sup>[[link](#no-for-loops)]</sup>
 
   ```Ruby
@@ -663,7 +663,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="same-line-condition"></a>
   조건문의 내용이 여러 줄일 때,
-  조건식은 항상 `if/unless`와 같은 줄에 넣어라.
+  조건식은 항상 `if/unless`와 같은 줄에 붙여 써라.
 <sup>[[link](#same-line-condition)]</sup>
 
   ```Ruby
@@ -1006,11 +1006,11 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-dsl-parens"></a>
-  (!todo)
-  Omit parentheses around parameters for methods that are part of an internal
-  DSL (e.g. Rake, Rails, RSpec), methods that have "keyword" status in Ruby
-  (e.g. `attr_reader`, `puts`) and attribute access methods. Use parentheses
-  around the arguments of all other method invocations.
+  메소드가 다음 세 가지인 경우 인수를 감싸는 괄호를 생략하라.
+  1. 내장 DSL(예를들어 Rake, Rails, RSpec 등)의 일부인 메소드
+  2. 루비에서 "키워드" 역할을 하고 있는 메서드 (예를들어 `attr_reader`, `puts`)
+  3. attribute 접근 메서드
+  이외의 다른 모든 메서드 호출시 사용되는 인수들은 괄호로 감싸야 한다.
 <sup>[[link](#no-dsl-parens)]</sup>
 
   ```Ruby
@@ -1104,20 +1104,14 @@ PDF나 HTML로 복사해갈 수 있다.
   names.select { |name| name.start_with?('S') }.map { |name| name.upcase }
   ```
 
-  몇몇은 {...}를 사용하는 복수행 chaining이 괜찮다고 주장할수도 있겠지만,
-  그들은 스스로에게 질문을 던져봐야한다.
-  - 코드가 정말 읽기 좋은지, 발췌된 블럭의 내용이 메소드 안에 잘 들어가는지.
-    (!todo is this code really readable and can the blocks' contents be extracted into
-  nifty methods?)
+  혹자는 {...}를 사용하는 여러줄에 걸친 chaining이 보기에 괜찮다고 주장할수도 있겠지만,
+  정말 그러한지는 다음 사항들에 대해 자문해봐야 한다.
+  그렇게 작성된 코드가 가독성이 좋은지? 또한 블럭 내부의 내용이 외부의 정교한 메서드로 호환 가능한지?
 
 * <a name="block-argument"></a>
   다른 블럭에 인수만 넘기는 블럭 구문 쓰는 것을 피하기 위해,
   명시적으로 블럭 인수를 사용하는 것을 고려해보라.
   블록이 `proc`으로 변하면서, 성능에 영향을 주는 것을 조심하라.
-  (!todo)
-  Consider using explicit block argument to avoid writing block literal that
-  just passes its arguments to another block. Beware of the performance impact,
-  though, as the block gets converted to a Proc.
 <sup>[[link](#block-argument)]</sup>
 
   ```Ruby
@@ -1314,10 +1308,12 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-case-equality"></a>
-  case equality(!todo 완전항등?) 연산자 `===`의 명시적 사용을 피하라.
-  (!todo) As its name implies
-  it is meant to be used implicitly by `case` expressions and
-  outside of them it yields some pretty confusing code.
+  case동등연산자(case equality) `===`의 명시적인 사용을 피하라.
+  이름에서 암시하듯, `case`표현식 
+  (!todo)
+  As its name implies
+  it is meant to be used implicitly by `case` expressions
+  and outside of them it yields some pretty confusing code.
 <sup>[[link](#no-case-equality)]</sup>
 
   ```Ruby
@@ -1333,8 +1329,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-cryptic-perlisms"></a>
-  Perl스타일의 특수 변수(`$:`, `$;`등과 같은 것들)사용를 피하라.
-  (!todo)They are quite cryptic and their use in anything but one-liner scripts is discouraged.
+  Perl스타일의 특수 변수(`$:`, `$;`등과 같은 것들)사용을 피하라.
+  그들은 상당히 기괴해보이고, one-liner 스크립트외의 그것들의 사용은 의지를 꺾는다.
   `English`라이브러리에서 제공하는 인간 친화적인 alias를 사용하라.
 <sup>[[link](#no-cryptic-perlisms)]</sup>
 
@@ -1621,9 +1617,8 @@ PDF나 HTML로 복사해갈 수 있다.
   제어구문에서 중첩된 조건문은 피하라.
 <sup>[[link](#no-nested-conditionals)]</sup>
 
-  (!todo)Prefer a guard clause when you can assert invalid data. A guard clause
-  is a conditional statement at the top of a function that bails out as
-  soon as it can.
+  유효하지 않은 데이터가 들어갈 수도 있다고 볼 수있는 경우, 보호구문을 권장한다.
+  보호구문은 가능한 함수에서 빨리 탈출할 수있게 하는 함수 제일 처음에 있는 조건문이다.
 
   ```Ruby
   # 나쁜 예
@@ -1804,9 +1799,6 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="safe-because-unsafe"></a>
-  (!todo)
-  Define the non-bang (safe) method in terms of the bang (dangerous) one if
-  possible.
   가능하면 bang(위험한) 관점에서 non-bang(안전한)메소드를 정의하라.
 <sup>[[link](#safe-because-unsafe)]</sup>
 
