@@ -1115,7 +1115,7 @@ PDF나 HTML로 복사해갈 수 있다.
   nifty methods?)
 
 * <a name="block-argument"></a>
-  다른 블럭에 인자만 넘기는 블럭 구문 쓰는 것을 피하기 위해,
+  다른 블럭에 인수만 넘기는 블럭 구문 쓰는 것을 피하기 위해,
   명시적으로 블럭 인수를 사용하는 것을 고려해보라.
   블록이 `proc`으로 변하면서, 성능에 영향을 주는 것을 조심하라.
   (!todo)
@@ -1504,7 +1504,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="array-join"></a>
-  문자 인자와 함께 쓰는 기괴한 `Array#*` 보다 `Array#join`의 사용을 선호한다.
+  문자 인수와 함께 쓰는 기괴한 `Array#*` 보다 `Array#join`의 사용을 선호한다.
 <sup>[[link](#array-join)]</sup>
 
   ```Ruby
@@ -1671,7 +1671,7 @@ PDF나 HTML로 복사해갈 수 있다.
 ## 네이밍
 
 > 프로그래밍에서 단지 진짜로 어려운 것들은 캐시무효화와
-> 이름을 는 것이다. <br/>
+> 이름을 짓는 것이다. <br/>
 > -- Phil Karlton
 
 * <a name="english-identifiers"></a>
@@ -1780,7 +1780,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="dangerous-method-bang"></a>
   잠재적으로 *위험한* 메소드의 이름은 *위험한*메소드의 안전한 버젼이 존재할 때는 느낌표로 끝낸다.
-  (예: `self`나 인자를 수정하는 메소드, `exit!` (doesn't run the finalizers like `exit`does) 등.)
+  (예: `self`나 인수를 수정하는 메소드, `exit!` (doesn't run the finalizers like `exit`does) 등.)
   (!todo 위의 괄호안 finalizers)
 <sup>[[link](#dangerous-method-bang)]</sup>
 
@@ -1834,11 +1834,11 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="reduce-blocks"></a>
   짧은 블럭과 함께 `reduce`를 쓸 때에는,
-  인자 이름을 `|a, e|`로 해라.(accumulator, element)
+  인수 이름을 `|a, e|`로 해라.(accumulator, element)
 <sup>[[link](#reduce-blocks)]</sup>
 
 * <a name="other-arg"></a>
-  이항 연산자를 정의할 때에는, 인자 이름을 `other`로 해라
+  이항 연산자를 정의할 때에는, 인수 이름을 `other`로 해라.
   (`<<`와 `[]`는 의미가 달라지므로 이 규칙에서 제외된다.)
 <sup>[[link](#other-arg)]</sup>
 
@@ -1862,7 +1862,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="count-vs-size"></a>
   `size`를 대신해서 `count`를 쓰지 마라. `Array`외의 `Enumerable`객체들은
-  크기를 결정하기 위해 모든 콜렉션을 반복한다
+  크기를 결정하기 위해 모든 콜렉션을 반복한다.
 <sup>[[link](#count-vs-size)]</sup>
 
   ```Ruby
@@ -2406,7 +2406,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-explicit-runtimeerror"></a>
-  `fail/raise`를 사용할 때 `RuntimeError`를 첫번째 인자로 하는 메서드는 사용하지 않는다.
+  `fail/raise`를 사용할 때 `RuntimeError`를 첫번째 인수로 하는 메서드는 사용하지 않는다.
 <sup>[[link](#no-explicit-runtimeerror)]</sup>
 
   ```Ruby
@@ -2418,7 +2418,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="exception-class-messages"></a>
-  예외 인스턴스를 생성해서 `fail/raise`를 하는 것 보다 `fail/raise`의 첫번째 인자에 예외 클래스를
+  예외 인스턴스를 생성해서 `fail/raise`를 하는 것 보다 `fail/raise`의 첫번째 인수에 예외 클래스를
   넘기는 메서드를 사용하는 것이 더 좋다
 <sup>[[link](#exception-class-messages)]</sup>
 
@@ -3284,7 +3284,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#alias-method)]</sup>
 
 * <a name="optionparser"></a>
-  복잡한 명령어 라인에서 인자를 가져올때 `OptionParser`를 사용하고 간단한 옵션은 `ruby -s`를 사용한다.
+  복잡한 명령어 라인에서 인수를 가져올때 `OptionParser`를 사용하고 간단한 옵션은 `ruby -s`를 사용한다.
 <sup>[[link](#optionparser)]</sup>
 
 * <a name="time-now"></a>
@@ -3296,7 +3296,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#functional-code)]</sup>
 
 * <a name="no-arg-mutations"></a>
-  의도하지 않게 메서드 안에서 아규먼트를 수정하면 안된다.
+  의도하지 않게 메서드 안에서 인수를 수정하면 안된다.
 <sup>[[link](#no-arg-mutations)]</sup>
 
 * <a name="three-is-the-number-thou-shalt-count"></a>
@@ -3348,7 +3348,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)에
-따라 이용할 수 있습니다.
+따라 이용가능하다.
 
 # Spread the Word
 
