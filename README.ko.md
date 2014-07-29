@@ -7,13 +7,15 @@
 - 파이썬 개발자들은 훌륭한 프로그래밍 스타일 가이드([PEP-8](http://www.python.org/dev/peps/pep-0008/))
 를 가지고 있으며, 우리에겐 코딩 스타일과 모범 사례를 가진 공식적인 가이드가 전혀 없다는 것이다.
 그리고 나는 그것이야말로 문제라고 확신한다.
-또한 루비의 훌륭한 해커 커뮤니티가 모두가 탐낼만한 문서를 만들어낼 능력이 있다고 확신한다.
+또한 루비의 훌륭한 해커 커뮤니티는 모두가 탐낼만한 문서를 만들어낼 능력이 있다고 확신한다.
 
-이 가이드는 사내 루비 코딩 가이드라인 수립을 위해 작성된 것입니다.
+이 가이드는 사내 Ruby 코딩 가이드라인으로 시작됐다.
 그러나 몇몇 포인트에서 제가 작성한 가이드가 일반 루비 커뮤니티에도 도움이 되게끔 써서
 이와 같은 중복 작업이 더이상 없기를 바라며 작업하기로 했습니다.
 그러나 루비 커뮤니티에 의해 자체적으로 수립된 예제, 숙어, 스타일에 관한
-프로그래밍 방식 역시 많은 관련자들에게 도움이 될 것입니다.
+프로그래밍 방식 역시 많은 관련자들에게 도움이 될 것이다.
+
+(!todo)
 
 만약 Rails를 한다면, 다음의 가이드라인 완성도 확인해보기 바란다.
 [Ruby on Rails 3 & 4 Style Guide](https://github.com/bbatsov/rails-style-guide).
@@ -21,36 +23,37 @@
 # 루비 스타일 가이드
 
 이 루비 스타일 가이드는 다른 루비프로그래머들과 유지가능한 코드를 작성하는
-모법사례를 적용하는 것을 추천합니다.
-이 가이드가 실제 사용밥법을 반영하기 때문에, 이상적으로 만들어져,
-적용을 위험하다고 느끼는 사람들에 의해서는 사용되지 않습니다.
-&ndash;비록 그게 아무리 좋다고 해도 말입니다.
+모범사례를 적용하는 것을 추천한다.
+이 가이드가 실제 사용밥법을 반영하기 때문에, 이상적으로 만들어져서
+적용이 위험하다고 느끼는 사람들에 의해서는 사용되지 않았다.
+&ndash;비록 그게 아무리 좋다고 해도 말이다.
 
-이 가이드는 관련된 규칙에 따라 여러 섹션으로 나눠져있습니다.
-(자명하다고 판단된 것을 제외하고는)규칙을 적으며 근거를 덧붙이려 노력했습니다. 
+이 가이드는 관련된 규칙에 따라 여러 부분으로 나눠져있다.
+(자명하다고 판단된 것을 제외하고는)규칙을 적으며 근거를 덧붙이려 노력했다.
 
-이 모든 규칙들이 갑자기 제시되지는 않았습니다. 이 것들 대부분이
-내 전문 소프트웨어 엔지니어로 쌓은 다량의 경험과 루비커뮤니티원들의 제안,
+이 모든 규칙들이 갑자기 제시되지는 않았다. 이 것들 대부분이
+내 전문분야인 소프트웨어 엔지니어로써의 수 많은 경험,루비커뮤니티원들의 제안,
 또한 높은 평가를 받고있는 프로그래밍 리소스인
 ["Programming Ruby 1.9"](http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0)과
 ["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177)
-에 기반합니다.
+를 기반이 되었다.
 
-특정 스타일에 대해서 Ruby커뮤니티의 명백한 합의를 얻지 못한 부분도 있습니다.
+특정 스타일에 대해서 Ruby커뮤니티의 명백한 합의를 얻지 못한 부분도 있다.
 (문자열 구문 따옴표, 해시구문 내에서의 공백, 여러줄에 걸친 메소드 체인에서의 점(.)위치 등등)
-이러한 시나리오에서는 어떤 유명한 스타일도 허용되므로, 어떤 것을 선택해 지속적으로 사용 할까는 당신 나름입니다.
+이러한 시나리오에서는 모든 유명한 스타일들이 허용되므로,
+어떤 것을 사용할지는 당신이 선택하고 적용하기 나름이다.
 
-이 가이드는 아직 완성되지 않았습니다.- 몇 가지 규칙은 예제가 없고,
-몇 가지 규칙은 충분하고 명확한 설명이 없습니다.
-이러한 문제들은 곧 해결 될것입니다. - 일단 그렇다는 걸 기억해두세요.
+이 가이드는 아직 완성되지 않았다. - 몇 가지 규칙은 예제가 없고,
+몇 가지 규칙은 충분하고 명확한 설명이 없다.
+이러한 문제들은 곧 해결될 것이다. - 일단 그렇다는 걸 기억하고 있으면 된다.
 
-이 가이느는 [Transmuter](https://github.com/TechnoGate/transmuter)를 통해
-PDF나 HTML로 복사해갈 수 있습니다.
+이 가이드는 [Transmuter](https://github.com/TechnoGate/transmuter)를 통해
+PDF나 HTML로 복사해갈 수 있다.
 
 [RuboCop](https://github.com/bbatsov/rubocop)은 이 스타일 가이드에 기반한
-코드 분석기 입니다.
+코드 분석기다.
 
-이 가이드의 번역은 다음의 언어들로 되어있습니다.
+이 가이드의 번역은 다음의 언어들로 되어있다.
 
 * [Chinese Simplified](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md)
 * [Chinese Traditional](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
@@ -66,7 +69,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 
 * [소스 코드 레이아웃](#소스-코드-레이아웃)
 * [구문](#구문)
-* [Naming](#naming)
+* [네이밍](#네이밍)
 * [주석](#주석)
   * [주석 어노테이션](#주석-어노테이션)
 * [클래스와 모듈](#클래스와-모듈)
@@ -86,12 +89,12 @@ PDF나 HTML로 복사해갈 수 있습니다.
 > -- Jerry Coffin (on indentation)
 
 * 소스 파일의 인코딩은 <a name="utf-8"></a>
-  `UTF-8`을 사용하세요.
+  `UTF-8`을 사용하라.
 <sup>[[link](#utf-8)]</sup>
-* <a name="spaces-indentation"></a>
- tab은 들여쓰기 단계별로 **스페이스 2칸**을 사용합니다. (soft tab 사용). hard tab사용 안함
-<sup>[[link](#spaces-indentation)]</sup>
 
+* <a name="spaces-indentation"></a>
+ tab은 들여쓰기 단위별로 **스페이스 2칸**을 사용하라. (soft tab 사용). hard tab사용 안함
+<sup>[[link](#spaces-indentation)]</sup>
 
   ```Ruby
   # 나쁜 예 - 스페이스 4칸
@@ -106,7 +109,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
   ```
 
 * <a name="crlf"></a>
-  Unix스타일로 줄바꿈 하세요. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어 있습니다.Windows 사용자는 특히 주의가 필요합니다.)
+  Unix스타일로 줄바꿈 해라. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어 있습니다.Windows 사용자는 특히 주의가 필요합니다.)
 <sup>[[link](#crlf)]</sup>
 
   * 만약 Git을 사용하고 있으면, 다음 설정 추가를 통해 프로젝트가 Windows 줄바꿈 형식으로
@@ -986,7 +989,8 @@ PDF나 HTML로 복사해갈 수 있습니다.
     ```
 
 * <a name="loop-with-break"></a>
-  종결조건을 나중에 판정하는 루프(!todo post-loop tests)를 위한 `begin/end/until` 또는 `begin/end/while`보다는
+  종결조건을 나중에 판정하는 루프를 쓸 때,
+  `begin/end/until` 또는 `begin/end/while`보다는
   `Kernel#loop`와 `break`를 사용해라.
 <sup>[[link](#loop-with-break)]</sup>
 
@@ -1032,8 +1036,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
   ```
 
 * <a name="no-braces-opts-hash"></a>
-  Omit the outer braces around an implicit options hash.
-  (!todo)암시적인 옵션들의 해시의 바깥 중괄호는 생략한다.
+  옵션들이 해시를 암시한다면 가장 바깥 중괄호를 생략한다.
 
 <sup>[[link](#no-braces-opts-hash)]</sup>
 
@@ -1928,7 +1931,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-superfluous-comments)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   counter += 1 # Increments counter by one.
   ```
 
@@ -2052,7 +2055,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#file-classes)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
 
   # foo.rb
   class Foo
@@ -2067,7 +2070,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     # 안에 30개의 메서드
   end
 
-  # 좋음
+  # 좋은 예
 
   # foo.rb
   class Foo
@@ -2095,7 +2098,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#modules-vs-classes)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   class SomeClass
     def self.some_method
       # body 생략
@@ -2105,7 +2108,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     end
   end
 
-  # 좋음
+  # 좋은 예
   module SomeClass
     module_function
 
@@ -2124,7 +2127,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#module-function)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   module Utilities
     extend self
 
@@ -2137,7 +2140,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     end
   end
 
-  # 좋음
+  # 좋은 예
   module Utilities
     module_function
 
@@ -2184,7 +2187,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#attr_family)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   class Person
     def initialize(first_name, last_name)
       @first_name = first_name
@@ -2200,7 +2203,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     end
   end
 
-  # 좋음
+  # 좋은 예
   class Person
     attr_reader :first_name, :last_name
 
@@ -2216,11 +2219,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#attr)]</sup>
 
   ```Ruby
-  # 나쁨 - accessor를 하나 생성 (Ruby 1.9에서 deprecated)
+  # 나쁜 예 - accessor를 하나 생성 (Ruby 1.9에서 deprecated)
   attr :something, true
   attr :one, :two, :three # attr_reader 처럼 동작한다.
 
-  # 좋음
+  # 좋은 예
   attr_accessor :something
   attr_reader :one, :two, :three
   ```
@@ -2230,7 +2233,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#struct-new)]</sup>
 
   ```Ruby
-  # 좋음
+  # 좋은 예
   class Person
     attr_accessor :first_name, :last_name
 
@@ -2240,7 +2243,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     end
   end
 
-  # 더 좋음
+  # 더 좋은 예
   Person = Struct.new(:first_name, :last_name) do
   end
   ````
@@ -2268,7 +2271,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#duck-typing)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   class Animal
     # abstract 메서드
     def speak
@@ -2363,12 +2366,12 @@ PDF나 HTML로 복사해갈 수 있습니다.
 
   ```Ruby
   class TestClass
-    # 나쁨
+    # 나쁜 예
     def TestClass.some_method
       # body 생략
     end
 
-    # 좋음
+    # 좋은 예
     def self.some_other_method
       # body 생략
     end
@@ -2407,10 +2410,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-explicit-runtimeerror)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   fail RuntimeError, 'message'
 
-  # 좋음 - 기본적으로 RuntimeError가 발생한다.
+  # 좋은 예 - 기본적으로 RuntimeError가 발생한다.
   fail 'message'
   ```
 
@@ -2420,11 +2423,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#exception-class-messages)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   fail SomeException.new('message')
   # `fail SomeException.new('message'), backtrace` 이렇게 쓸 수 는 없다.
 
-  # 좋음
+  # 좋은 예
   fail SomeException, 'message'
   # `fail SomeException, 'message', backtrace` 일관성 있는 방법이다.
   ```
@@ -2449,7 +2452,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#begin-implicit)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   def foo
     begin
       # 메인 로직은 여기에
@@ -2458,7 +2461,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     end
   end
 
-  # 좋음
+  # 좋은 예
   def foo
     # 메인 로직은 여기에
   rescue
@@ -2472,7 +2475,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#contingency-methods)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   begin
     something_that_might_fail
   rescue IOError
@@ -2485,7 +2488,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
     # IOError 처리
   end
 
-  # 좋음
+  # 좋은 예
   def with_io_error_handling
      yield
   rescue IOError
@@ -2502,14 +2505,14 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#dont-hide-exceptions)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   begin
     # 여기에서 예외가 발생한다.
   rescue SomeError
     # rescue 절에서 아무것도 하지 않는다.
   end
 
-  # 나쁨
+  # 나쁜 예
   do_something rescue nil
   ```
 
@@ -2518,10 +2521,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-rescue-modifiers)]</sup>
 
   ```Ruby
-  # 나쁨 - 여기서 StandardError 예외와 StandardError를 상속한 예외들을 잡는다.
+  # 나쁜 예 - 여기서 StandardError 예외와 StandardError를 상속한 예외들을 잡는다.
   read_file rescue handle_error($!)
 
-  # 좋음 - 여기서 Error::ENOENT 예외와 Error:ENOENT를 상속한 예외들만 잡는다.
+  # 좋은 예 - 여기서 Error::ENOENT 예외와 Error:ENOENT를 상속한 예외들만 잡는다.
   def foo
     read_file
   rescue Errno::ENOENT => ex
@@ -2534,14 +2537,14 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-exceptional-flows)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   begin
     n / d
   rescue ZeroDivisionError
     puts 'Cannot divide by 0!'
   end
 
-  # 좋음
+  # 좋은 예
   if d.zero?
     puts 'Cannot divide by 0!'
   else
@@ -2558,7 +2561,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-blind-rescues)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   begin
     # exit를 호출하면 kill 시그널이 잡힌다. (kill -9는 제외)
     exit
@@ -2567,14 +2570,14 @@ PDF나 HTML로 복사해갈 수 있습니다.
     # 예외 처리
   end
 
-  # 좋음
+  # 좋은 예
   begin
     # 많은 개발자들의 예상하는 Exception 대신 StandardError를 잡게된다.
   rescue => e
     # 예외 처리
   end
 
-  # 이것도 좋음
+  # 이것도 좋은 예
   begin
     # 여기서 예외 발생
 
@@ -2589,7 +2592,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#exception-ordering)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   begin
     # 코드
   rescue Exception => e
@@ -2634,11 +2637,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#literal-array-hash)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   arr = Array.new
   hash = Hash.new
 
-  # 좋음
+  # 좋은 예
   arr = []
   hash = {}
   ```
@@ -2649,10 +2652,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-w)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   STATES = ['draft', 'open', 'closed']
 
-  # 좋음
+  # 좋은 예
   STATES = %w(draft open closed)
   ```
 
@@ -2662,10 +2665,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-i)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   STATES = [:draft, :open, :closed]
 
-  # 좋음
+  # 좋은 예
   STATES = %i(draft open closed)
   ```
 
@@ -2675,17 +2678,17 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-trailing-array-commas)]</sup>
 
   ```Ruby
-  # 나쁨 - 항목을 이동/추가/삭제하기 쉽지만 사용하지 마라.
+  # 나쁜 예 - 항목을 이동/추가/삭제하기 쉽지만 사용하지 마라.
   VALUES = [
              1001,
              2020,
              3333,
            ]
 
-  # 나쁨
+  # 나쁜 예
   VALUES = [1001, 2020, 3333, ]
 
-  # 좋음
+  # 좋은 예
   VALUES = [1001, 2020, 3333]
   ```
 
@@ -2713,10 +2716,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#symbols-as-keys)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
 
-  # 좋음
+  # 좋은 예
   hash = { one: 1, two: 2, three: 3 }
   ```
 
@@ -2729,10 +2732,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   hash = { :one => 1, :two => 2, :three => 3 }
 
-  # 좋음
+  # 좋은 예
   hash = { one: 1, two: 2, three: 3 }
   ```
 
@@ -2742,10 +2745,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-mixed-hash-syntaces)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   { a: 1, 'b' => 2 }
 
-  # 좋음
+  # 좋은 예
   { :a => 1, 'b' => 2 }
   ```
 
@@ -2756,11 +2759,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#hash-key)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   hash.has_key?(:test)
   hash.has_value?(value)
 
-  # 좋음
+  # 좋은 예
   hash.key?(:test)
   hash.value?(value)
   ```
@@ -2771,11 +2774,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 
   ```Ruby
   heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
-  # 나쁨 - 만약 실수가 있다고 한다면 알아채지 못할 수 있다.
+  # 나쁜 예 - 만약 실수가 있다고 한다면 알아채지 못할 수 있다.
   heroes[:batman] # => "Bruce Wayne"
   heroes[:supermann] # => nil
 
-  # 좋음 - 문제를 명확하게 하기 위해서 KeyError 예외가 발생한다.
+  # 좋은 예 - 문제를 명확하게 하기 위해서 KeyError 예외가 발생한다.
   heroes.fetch(:supermann)
   ```
 
@@ -2786,10 +2789,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
   ```Ruby
   batman = { name: 'Bruce Wayne', is_evil: false }
 
-  # 나쁨 - 그냥 || 연산자를 사용한다면 예상하지 못한 결과를 얻을 수도 있다.
+  # 나쁜 예 - 그냥 || 연산자를 사용한다면 예상하지 못한 결과를 얻을 수도 있다.
   batman[:is_evil] || true # => true
 
-  # 좋음 - 제대로 된 false 값을 얻을 수 있다.
+  # 좋은 예 - 제대로 된 false 값을 얻을 수 있다.
   batman.fetch(:is_evil, true) # => false
   ```
 
@@ -2800,7 +2803,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
   ```Ruby
   batman = { name: 'Bruce Wayne' }
 
-  # 나쁨 - 만약 기본 값을 사용하는 경우, 함수가 먼저 실행이 되므로
+  # 나쁜 예 - 만약 기본 값을 사용하는 경우, 함수가 먼저 실행이 되므로
   # 여러번 실행되는 경우 프로그램이 느려질 수 있다.
   batman.fetch(:powers, get_batman_powers) # get_batman_powers은 오래 걸리는 함수이다.
 
@@ -2813,11 +2816,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#hash-values-at)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   email = data['email']
   nickname = data['nickname']
 
-  # 좋음
+  # 좋은 예
   email, username = data.values_at('email', 'nickname')
   ```
 
@@ -2836,13 +2839,13 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#string-interpolation)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   email_with_name = user.name + ' <' + user.email + '>'
 
-  # 좋음
+  # 좋은 예
   email_with_name = "#{user.name} <#{user.email}>"
 
-  # 좋음
+  # 좋은 예
   email_with_name = format('%s <%s>', user.name, user.email)
   ```
 
@@ -2863,10 +2866,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
     사용하는 것이 좋다.
 
     ```Ruby
-    # 나쁨
+    # 나쁜 예
     name = "Bozhidar"
 
-    # 좋음
+    # 좋은 예
     name = 'Bozhidar'
     ```
 
@@ -2874,10 +2877,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
     쌍 따옴표를 사용한다.
 
     ```Ruby
-    # 나쁨
+    # 나쁜 예
     name = 'Bozhidar'
 
-    # 좋음
+    # 좋은 예
     name = "Bozhidar"
     ```
 
@@ -2889,10 +2892,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-character-literals)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   char = ?c
 
-  # 좋음
+  # 좋은 예
   char = 'c'
   ```
 
@@ -2909,22 +2912,22 @@ PDF나 HTML로 복사해갈 수 있습니다.
       @last_name = last_name
     end
 
-    # 나쁨 - 동작하지만 어색함
+    # 나쁜 예 - 동작하지만 어색함
     def to_s
       "#@first_name #@last_name"
     end
 
-    # 좋음
+    # 좋은 예
     def to_s
       "#{@first_name} #{@last_name}"
     end
   end
 
   $global = 0
-  # 나쁨
+  # 나쁜 예
   puts "$global = #$global"
 
-  # 좋음
+  # 좋은 예
   puts "$global = #{$global}"
   ```
 
@@ -2933,10 +2936,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-to-s)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   message = "This is the #{result.to_s}."
 
-  # 좋음
+  # 좋은 예
   message = "This is the #{result}."
   ```
 
@@ -2995,8 +2998,8 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#non-capturing-regexp)]</sup>
 
   ```Ruby
-  /(first|second)/   # 나쁨
-  /(?:first|second)/ # 좋음
+  /(first|second)/   # 나쁜 예
+  /(?:first|second)/ # 좋은 예
   ```
 
 * <a name="no-perl-regexp-last-matchers"></a>
@@ -3008,10 +3011,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
   /(regexp)/ =~ string
   ...
 
-  # 나쁨
+  # 나쁜 예
   process $1
 
-  # 좋음
+  # 좋은 예
   process Regexp.last_match[1]
   ```
 
@@ -3021,12 +3024,12 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#no-numbered-regexes)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   /(regexp)/ =~ string
   ...
   process Regexp.last_match[1]
 
-  # 좋음
+  # 좋은 예
   /(?<meaningful_var>regexp)/ =~ string
   ...
   process meaningful_var
@@ -3076,19 +3079,19 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-q-shorthand)]</sup>
 
   ```Ruby
-  # 나쁨 (문자열 삽입이 없다)
+  # 나쁜 예 (문자열 삽입이 없다)
   %(<div class="text">Some text</div>)
   # should be '<div class="text">Some text</div>'
 
-  # 나쁨 (쌍 따옴표가 없다)
+  # 나쁜 예 (쌍 따옴표가 없다)
   %(This is #{quality} style)
   # should be "This is #{quality} style"
 
-  # 나쁨 (여러줄이다)
+  # 나쁜 예 (여러줄이다)
   %(<div>\n<span class="big">#{exclamation}</span>\n</div>)
   # should be a heredoc.
 
-  # 좋음 (한줄에 쌍따옴표와 문자열 삽입이 필요하다)
+  # 좋은 예 (한줄에 쌍따옴표와 문자열 삽입이 필요하다)
   %(<tr><td class="name">#{name}</td>)
   ```
 
@@ -3098,12 +3101,12 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-q)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   name = %q(Bruce Wayne)
   time = %q(8 o'clock)
   question = %q("What did you say?")
 
-  # 좋음
+  # 좋은 예
   name = 'Bruce Wayne'
   time = "8 o'clock"
   question = '"What did you say?"'
@@ -3114,14 +3117,14 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-r)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   %r(\s+)
 
-  # 아직도 나쁨
+  # 여전히 나쁜 예
   %r(^/(.*)$)
   # should be /^\/(.*)$/
 
-  # 좋음
+  # 좋은 예
   %r(^/blog/2011/(.*)$)
   ```
 
@@ -3130,10 +3133,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-x)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   date = %x(date)
 
-  # 좋음
+  # 좋은 예
   date = `date`
   echo = %x(echo `date`)
   ```
@@ -3149,11 +3152,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#percent-literal-braces)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   %w[one two three]
   %q{"Test's king!", John said.}
 
-  # 좋음
+  # 좋은 예
   %w(one two three)
   %q("Test's king!", John said.)
   ```
@@ -3215,7 +3218,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
   - 일반 메서드에 단정적으로 위임한다. :
 
     ```ruby
-    # 나쁨
+    # 나쁜 예
     def method_missing?(meth, *args, &block)
       if /^find_by_(?<prop>.*)/ =~ meth
         # ... find_by 하는 코드가 많이
@@ -3224,7 +3227,7 @@ PDF나 HTML로 복사해갈 수 있습니다.
       end
     end
 
-    # 좋음
+    # 좋은 예
     def method_missing?(meth, *args, &block)
       if /^find_by_(?<prop>.*)/ =~ meth
         find_by(prop, *args, &block)
@@ -3263,10 +3266,10 @@ PDF나 HTML로 복사해갈 수 있습니다.
 <sup>[[link](#instance-vars)]</sup>
 
   ```Ruby
-  # 나쁨
+  # 나쁜 예
   $foo_bar = 1
 
-  # 좋음
+  # 좋은 예
   module Foo
     class << self
       attr_accessor :bar
@@ -3361,12 +3364,11 @@ PDF나 HTML로 복사해갈 수 있습니다.
 
 ## 통일해야 할 것
 * prefer 선호하다 -> 권장하다
-* Favor 선
+* Favor 더 좋다 정도
 * do something 해석
-* 반말, 존댓말
-* 예제에 좋음,나쁨..
-* 줄 vs 행
-* body의 적절한 한국어
+* 반말, 존댓말 => 반말!
+* 줄 vs 행 : 줄!
+* body의 적절한 한국어, 그때 그때 의역
 * control flow 제어 흐름? 제어 구문?
-* modifier를 한정자라고 하기 좀 그렇다.. 수식어도 이상하고
-* chaining...? 적절한 해석이 없다.
+* modifier를 한정자라고 하기 좀 그렇다.. 수식어도 이상하고 => 한정자 또는 의역
+* chaining...? 체이닝으로
