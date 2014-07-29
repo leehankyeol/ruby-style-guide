@@ -1851,13 +1851,11 @@ PDF나 HTML로 복사해갈 수 있다.
 * <a name="map-fine-select-reduce-size"></a>
   `collect`보다는 `map`을, `detect`보다는 `find`를, `find_all`보다는 `select`를,
   `inject`보다는 `reduce`를, `length`보다는 `size`를 권장한다.
-  이것이 무리한 요구는 아니다; alias를 써서 가독성이 좋아진다면, 그것도 괜찮다.
-  rhyming methods(!todo)은 Smalltalk에 상속되며 이건 다른 프로그래밍 언어의 일반적인 경우와는 다르다.
-  The reason the use of `select` is encouraged over `find_all`
-  is that it goes together nicely with `reject` and its name is
-  pretty self-explanatory.(!todo)
-  `select`를 사용하는 이유는 `reject`와 함께 쓰였을 때
-  `find_all`보다 좀더 잘 어울리고 이름도 이쁘기 때문이다.
+  이것이 무리한 요구는 아니다; 다른 alias를 써서 가독성이 좋아진다면, 그것도 괜찮다.
+  메소드의 시적인 표현은 Samlltalk언어로 부터 물려받은 것으로, 일반적인 다른 프로그래밍 언어와는 다르다.
+  `select`를 사용하는 이유는 `reject`와 함께 쓰일 때
+  `find_all`보다 좀 더 잘 어울리고 이름 자체가 충분한 설명이되기 때문이다.
+
 <sup>[[link](#map-fine-select-reduce-size)]</sup>
 
 * <a name="count-vs-size"></a>
@@ -1874,11 +1872,11 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="flat-map"></a>
-  `map`+`flatten`을 사용하는 것 대신 `flat_map`를 사용해라.
-  이것은 2차이 상의 배열에 적용되지는 않는다. 다시 말해서,
-  `users.first.songs == ['a', ['b','c']]` 이 경우
+  `map`+`flatten`의 조합을 사용하는 것 대신 `flat_map`를 사용해라.
+  이것은 2차 이상의 배열에는 적용되지는 않는다.
+  다시 말해서, `users.first.songs == ['a', ['b','c']]` 이 경우는
   `flat_map`보다는 `map + flatten`를 사용하라.
-  `flat_map`은 1차원의 배열만 flat(!todo)하게 한다, 하지만 `flatten`은 모든것을 flat(!todo)하게 한다.
+  `flat_map`은 1차원의 배열만 1차원으로 만드는 반면 `flatten`은 모든것을 1차원 배열로 만든다.
 <sup>[[link](#flat-map)]</sup>
 
   ```Ruby
