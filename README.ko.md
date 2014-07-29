@@ -1,4 +1,4 @@
-# 서론
+#방서론
 
 > 롤 모델이 중요하다.<br/>
 > -- Officer Alex J. Murphy / RoboCop
@@ -409,8 +409,8 @@ PDF나 HTML로 복사해갈 수 있다.
   (그리고 분명히 읽기 더 쉽다.)
 
 * <a name="no-trailing-backslash"></a>
-  불필요한 \로 줄바꾸는 것을 피하십시오. 실제 프로그래밍시
-  긴 문자열로 인해 줄바꿈되는 것 외에는 줄을 임의로 바꾸지 마십시오.
+  불필요하게 \로 줄을 바꾸는 것을 피하라. 실제 프로그래밍시
+  긴 문자열로 인해 줄바꿈되는 것 외에는 줄을 임의로 바꾸지 마라
 <sup>[[link](#no-trailing-backslash)]</sup>
 
   ```Ruby
@@ -427,9 +427,9 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="consistent-multi-line-chains"></a>
-    복수행(multi-line) 표현시 루비에서는 크게 두 가지 방식이 사용되는데,
-    dot(.)의 위치에 따라 선두법(leading, A방식)과 후방법(trailing, B방식)이 있습니다.
-    전자는 dot(.)을 첫째 줄 뒷쪽에, 후자는 둘째 줄 앞쪽에 위치시켜 표현합니다. (아래 예시)
+    메소드 체이닝이 여러줄에 걸쳐서 이루어질 때, 일관된 스타일을 정하고 적용하라.
+    루비에서 여러줄에 걸친 메소드 체이닝 표현 스타일은 크게 두가지가 있는데, 둘 모두 괜찮은 방식이다.
+    `.`의 위치에 따라 선두법(leading, A방식)과 후방법(trailing, B방식)이 있다.
 <sup>[[link](#consistent-multi-line-chains)]</sup>
 
   * **(A방식)** 연쇄적인 메소드 호출이 서로 다른 줄에 걸쳐 연결되어 있을 때,
@@ -783,7 +783,7 @@ PDF나 HTML로 복사해갈 수 있다.
   end
 
   x = false
-  # 이중 부정은 boolean타입에서 무용
+  # 이중 부정은 boolean타입에서 무용함
   !!x # => false
 
   # 좋은 예
@@ -819,12 +819,12 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-multiline-ternary"></a>
-  복수행에 `?:`(삼항연산자)를 피하라;
+  여러줄의 조건구문에는 `?:`(삼항연산자)를 피하라;
   대신 `if/unless`를 사용하라.
 <sup>[[link](#no-multiline-ternary)]</sup>
 
 * <a name="if-as-a-modifier"></a>
-  한 개행의 body에는 `if/unless`를 한정자로 사용하는 것이 좋다.
+  구문이 한줄일 때에는, 같은 줄 끝에 `if/unless`를 사용하는 것이 좋다.
   또 다른 좋은 표현방법은 `&&/||`과 같은 제어 구문을 쓰는 것이다.
 <sup>[[link](#if-as-a-modifier)]</sup>
 
@@ -842,7 +842,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-multiline-if-modifiers"></a>
-  간단하지 않은 복수구문 블록에서는 한정자 `if/unless`를 피하라.
+  간단하지 않고 여러줄에 걸친 구문 블록에는, 한정자 `if/unless`를 피하라
 <sup>[[link](#no-multiline-if-modifiers)]</sup>
 
   ```Ruby
@@ -914,7 +914,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-multiline-while-do"></a>
-  복수 구문의 `while/until`에 `while/until condition do`를 절대 쓰지 마라.
+  `while/until`문의 내용이 여러줄일 때에는, `while/until condition do`를 절대 쓰지 마라.
 <sup>[[link](#no-multiline-while-do)]</sup>
 
   ```Ruby
@@ -938,7 +938,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="while-as-a-modifier"></a>
-  한 행의 body를 가질때에는 한정자 `while/until`가 좋다.
+  구문이 한줄일 때에는, 같은 줄 끝에 `while/until`를 쓰는 것이 좋다.
 <sup>[[link](#while-as-a-modifier)]</sup>
 
   ```Ruby
@@ -1104,9 +1104,10 @@ PDF나 HTML로 복사해갈 수 있다.
   names.select { |name| name.start_with?('S') }.map { |name| name.upcase }
   ```
 
-  혹자는 {...}를 사용하는 여러줄에 걸친 chaining이 보기에 괜찮다고 주장할수도 있겠지만,
+  혹자는 {...}를 사용하는 여러줄에 걸친 체이닝(chaining)이 보기에 괜찮다고 주장할수도 있겠지만,
   정말 그러한지는 다음 사항들에 대해 자문해봐야 한다.
   그렇게 작성된 코드가 가독성이 좋은지? 또한 블럭 내부의 내용이 외부의 정교한 메서드로 호환 가능한지?
+  등에 대해서 말이다.
 
 * <a name="block-argument"></a>
   다른 블럭에 인수만 넘기는 블럭 구문 쓰는 것을 피하기 위해,
@@ -1177,7 +1178,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-shadowing"></a>
-  당연한 거지만, 지역 변수와 메소드가 같지 않을 때, 지역변수로 메소드를 가리는 것을 피하라.
+  당연하지만 지역 변수와 메소드가 같은 것을 의미하지 않을때,
+  지역변수로 메소드를 가리는 것을 피하라.
 <sup>[[link](#no-shadowing)]</sup>
 
   ```Ruby
@@ -1233,7 +1235,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="self-assignment"></a>
-  사용가능할 때에는, 생략된 스타일의 자체 대입 연산자를 사용하라.
+  가능하면 생략된 스타일의 자체 대입 연산자를 사용하라.
 <sup>[[link](#self-assignment)]</sup>
 
   ```Ruby
@@ -1366,7 +1368,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="lambda-multi-line"></a>
   한 줄짜리 본문 블락에 새로운 lambda 문법구문을 사용하라.
-  `lambda`메소드는 복수행 블락에 써라.
+  `lambda`메소드는 여러줄이 있는 블락에 써라.
 <sup>[[link](#lambda-multi-line)]</sup>
 
   ```Ruby
