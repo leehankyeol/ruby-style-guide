@@ -1770,9 +1770,10 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#bool-methods-qmark)]</sup>
 
 * <a name="dangerous-method-bang"></a>
-  잠재적으로 *위험한* 메소드의 이름은 *위험한*메소드의 안전한 버젼이 존재할 때는 느낌표로 끝낸다.
-  (예: `self`나 인수를 수정하는 메소드, `exit!` (doesn't run the finalizers like `exit`does) 등.)
-  (!todo 위의 괄호안 finalizers)
+  잠재적으로 *위험한* 메소드
+  (다시 말해, `self`나 인수를 수정하는 메소드와 `exit!`(`exit`이 하는 것 처럼 finalizers를 실행하지 않음) 등등이다.)
+  의 이름은 *위험한*메소드의 안전한 버젼이 존재할 때는 느낌표로 끝낸다.
+  
 <sup>[[link](#dangerous-method-bang)]</sup>
 
   ```Ruby
