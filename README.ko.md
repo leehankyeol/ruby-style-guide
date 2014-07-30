@@ -351,7 +351,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="empty-lines-between-methods"></a>
-  정의 함수와, 논리적 단락마다 사이에 빈줄을 넣어 분할하자.
+  메소드 정의와, 단락이 논리적으로 구분될 때 마다 사이에 빈줄을 넣어 분할하자.
 <sup>[[link](#empty-lines-between-methods)]</sup>
 
   ```Ruby
@@ -542,7 +542,6 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#rdoc-conventions)]</sup>
 
 * <a name="80-character-limits"></a>
-  Limit lines to 80 characters.
   한 행에는 80자까지만 씁시다.
 <sup>[[link](#80-character-limits)]</sup>
 
@@ -555,8 +554,8 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#newline-eof)]</sup>
 
 * <a name="no-block-comments"></a>
-    블록 주석을 사용하지 마라. 앞에 공백이 들어가면 작동하지 않고,
-    일반 주석과 달리 쉽게 발견하기 어렵다.
+  블록 형태의 주석을 사용하지 마라. 앞에 공백이 들어가면 작동하지 않고,
+  일반 주석과 달리 쉽게 발견하기 어렵다.
 <sup>[[link](#no-block-comments)]</sup>
 
   ```Ruby
@@ -574,9 +573,9 @@ PDF나 HTML로 복사해갈 수 있다.
 ## 구문
 
 * <a name="double-colons"></a>
-    `::`는 상수(클래스나 모듈 포함)와
-    생성자(`Array()` 또는 `Nokogiri::HTML()`같은)를 참조할 때만 사용해라.
-    일반 메소드 호출에서는 절대 `::`를 쓰지 마라.
+  `::`는 상수(클래스나 모듈 포함)와
+   생성자(`Array()` 또는 `Nokogiri::HTML()`같은)를 참조할 때만 사용해라.
+  일반 메소드 호출에서는 절대 `::`를 쓰지 마라.
 <sup>[[link](#double-colons)]</sup>
 
   ```Ruby
@@ -592,8 +591,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="method-parens"></a>
-    인수가 있을 때 `def`와 괄호를 함께 사용하라.
-    받을 인수가 없을 때에는, 괄호를 제거 하자.
+  인수가 있을 때 `def`와 괄호를 함께 사용하라.
+  받을 인수가 없을 때에는, 괄호를 제거 하라.
 <sup>[[link](#method-parens)]</sup>
 
    ```Ruby
@@ -619,12 +618,12 @@ PDF나 HTML로 복사해갈 수 있다.
    ```
 
 * <a name="no-for-loops"></a>
-    `for`을 쓸 때에는 정확히 그 용법을 알고 있을 때에만 사용해야 한다.
-    대개의 경우 반복자(iterator)가 `for` 대신 사용된다.
-    `for` 구문은 `each` 의 관점에서 실행되기 때문에 일종의 우회적인 방식을 사용하지만,
-    `each` 용법과는 다른 점이 있다.
-    즉, `for`은 `each`와는 다르게 새로운 영역을 생성하는 것이 아니기 때문에,
-    `for` 구문 내부에서 정의된 변수들은 `for` 외부에서도 접근 가능하다.
+  `for`을 쓸 때에는 정확히 그 용법을 알고 있을 때에만 사용해야 한다.
+  대개의 경우 반복자(iterator)가 `for` 대신 사용된다.
+  `for` 구문은 `each` 의 관점에서 실행되기 때문에 일종의 우회적인 방식을 사용하지만,
+  `each` 용법과는 다른 점이 있다.
+  즉, `for`은 `each`와는 다르게 새로운 영역을 생성하는 것이 아니기 때문에,
+  `for` 구문 내부에서 정의된 변수들은 `for` 외부에서도 접근 가능하다.
 <sup>[[link](#no-for-loops)]</sup>
 
   ```Ruby
