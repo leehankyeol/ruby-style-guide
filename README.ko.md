@@ -1032,7 +1032,6 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="no-braces-opts-hash"></a>
   옵션들이 해시를 암시한다면 가장 바깥 중괄호를 생략한다.
-
 <sup>[[link](#no-braces-opts-hash)]</sup>
 
   ```Ruby
