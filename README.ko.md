@@ -113,17 +113,18 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="crlf"></a>
-  Unix스타일로 줄바꿈 해라. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어 있습니다.Windows 사용자는 특히 주의가 필요합니다.)
+  Unix스타일로 줄바꿈 해라. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어있다. Windows 사용자에겐 특히 주의가 필요하다.)
 <sup>[[link](#crlf)]</sup>
 
-  * 만약 Git을 사용하고 있으면, 다음 설정 추가를 통해 프로젝트가 Windows 줄바꿈 형식으로
-    강제 설정되는 것을 막을 수 있을 것입니다.
+  * 만약 Git을 사용하고 있으면, 다음 설정을 추가함으로써  프로젝트가 Windows 줄바꿈 형식으로
+    강제 설정되는 것을 막을 수 있을 것이다.
 
     ```bash
     $ git config --global core.autocrlf true
     ```
 * <a name="no-semicolon"></a>
-  둘 이상의 명령문과 표현식을 세미콜론(;)으로 나눠 표현하지 마세요. 한 줄에 한 개씩 따로 따로 쓰는 걸 권장합니ㄷ
+  두개이상의 명령문과 표현식을 세미콜론(;)으로 나눠쓰지 말아라.
+  한 줄에 한 개씩 쓰는 것을  권장한다.
 <sup>[[link](#no-semicolon)]</sup>
 
   ```Ruby
@@ -142,7 +143,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="single-line-classes"></a>
-  본문이 없는 클래스는 한 줄 형식이 선호됩니다.
+  본문이 없는 클래스는 한 줄 형식이 권장된다.
 <sup>[[link](#single-line-classes)]</sup>
 
   ```Ruby
@@ -158,10 +159,10 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-single-line-methods"></a>
-  한줄 짜리 메소드를 작성하지 마십시오.
+  한줄 짜리 메소드를 작성하지 마라.
   그러한 방식이 비록 현장에서 많이 쓰이긴 하지만, 일부 사람들은 그러한 syntax 사용법이 익숙지 않아
   선호되지 않는 경우도 있기 때문입니다.
-  어쨌든 한 줄에는 하나 이상의 메소드가 표현되어선 안 됩니다.
+  어쨌든 한 줄에는 하나 이상의 메소드가 표현되어선 안된다.
 <sup>[[link](#no-single-line-methods)]</sup>
 
   ```Ruby
