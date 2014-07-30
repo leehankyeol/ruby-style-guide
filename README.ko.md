@@ -3333,7 +3333,7 @@ PDF나 HTML로 복사해갈 수 있다.
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)에
 따라 이용가능하다.
 
-# Spread the Word
+# 공유합시다!
 
 커뮤니티 기반 스타일 가이드는 이걸 모르는 곳에서는 거의 쓸모가 없다.
 이 가이드를 친구나 동료들에게 트윗하거나 공유해라.
