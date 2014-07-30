@@ -1136,7 +1136,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-explicit-return"></a>
-  제어구문에불필요한 `return`을 피하라.
+  제어구문에 불필요한 `return`을 피하라.
 <sup>[[link](#no-explicit-return)]</sup>
 
   ```Ruby
@@ -1152,7 +1152,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-self-unless-required"></a>
-  `불필요한 self`를 피하라. (이건, self write accessor를 호출할 때만 필요하다.)
+  불필요한 `self`를 피하라. (이건, self write accessor를 호출할 때만 필요하다.)
 <sup>[[link](#no-self-unless-required)]</sup>
 
   ```Ruby
@@ -1207,8 +1207,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="safe-assignment-in-condition"></a>
-  배정이 괄호안에 싸여있지 않는 한,조건식에서에서 `=`(배정)를 써서 값을 반환하지 말아라.
-  이것은 *조건문에서 안정한 대입*으로 루비사용자들 사이에서는 상당히 유명한 관용표현이다.
+  배정문이 괄호안에 싸인경우를 제외하고는, 조건식에서 `=`(배정 연산자)를 써서 값을 반환하지 마라.
+  이것은 *조건문에서 안정한 대입*이라는 말로 루비사용자들 사이에서는 상당히 유명한 관용표현이다.
 <sup>[[link](#safe-assignment-in-condition)]</sup>
 
   ```Ruby
@@ -1283,9 +1283,9 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="double-amper-preprocess"></a>
-  존재여부를 모르는 전처리 변수에는 `&&=`를 사용합니다.
+  존재여부를 모르는 전처리 변수에는 `&&=`를 쓴다.
   `&&=`를 사용하면 값이 존재할 때만 값을 바꾸기 때문에,
-  값 존재 여부를 확인하는 `if`는 없어도 됩니다.
+  값 존재 여부를 확인하는 `if`는 없어도 된다.
 <sup>[[link](#double-amper-preprocess)]</sup>
 
   ```Ruby
