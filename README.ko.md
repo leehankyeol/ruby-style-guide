@@ -1875,7 +1875,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="reverse-each"></a>
   `reverse.each`보다는 `reverse_each`를 써라. `reverse_each`는
-  새로운 배열 할당을 하지 않는 장점이 있다.
+  새로운 배열을 할당하지 않는다는 장점이 있다.
 <sup>[[link](#reverse-each)]</sup>
 
   ```Ruby
@@ -1905,7 +1905,6 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#hash-space)]</sup>
 
 * <a name="english-syntax"></a>
-
   한 단어 이상의 주석은 대문자 표기법과 구두점 규칙을 사용한다. 마침표 뒤에는
   [공백](http://en.wikipedia.org/wiki/Sentence_spacing)을 사용한다.
 <sup>[[link](#english-syntax)]</sup>
@@ -3343,15 +3342,3 @@ PDF나 HTML로 복사해갈 수 있다.
 
 화이팅,<br/>
 [Bozhidar](https://twitter.com/bbatsov)
-
-# 마지막 checklist
-
-## 통일해야 할 것
-* prefer 선호하다 -> 권장하다
-* Favor 더 좋다 정도
-* do something 해석
-* 반말, 존댓말 => 반말!
-* 줄 vs 행 : 줄!
-* body의 적절한 한국어, 그때 그때 의역* control flow 제어 흐름? 제어 구문?
-* modifier를 한정자라고 하기 좀 그렇다.. 수식어도 이상하고 => 한정자 또는 의역
-* chaining...? 체이닝으로
