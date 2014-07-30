@@ -1842,7 +1842,6 @@ PDF나 HTML로 복사해갈 수 있다.
   메소드의 시적인 표현은 Samlltalk언어로 부터 물려받은 것으로, 일반적인 다른 프로그래밍 언어와는 다르다.
   `select`를 사용하는 이유는 `reject`와 함께 쓰일 때
   `find_all`보다 좀 더 잘 어울리고 이름 자체가 충분한 설명이되기 때문이다.
-
 <sup>[[link](#map-fine-select-reduce-size)]</sup>
 
 * <a name="count-vs-size"></a>
