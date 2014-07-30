@@ -1,4 +1,4 @@
-#방서론
+# 서론
 
 > 롤 모델이 중요하다.<br/>
 > -- Officer Alex J. Murphy / RoboCop
