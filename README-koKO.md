@@ -214,8 +214,8 @@ PDF나 HTML로 복사해갈 수 있다.
   e = M * c**2
   ```
   `{` 와 `}`는 구문의 명확화를 위해 쓸만한 가치가 있는데,
-  그 이유는 string에서 삽입구를 넣고싶을 때 뿐만 아니라 블록이나 해쉬 구문에 사용될 수 있기 때문이다.
-  해쉬 구문에서는 다음 두가지 스타일이 허용된다.
+  그 이유는 string에서 삽입구를 넣고싶을 때 뿐만 아니라 블록이나 해시 구문에 사용될 수 있기 때문이다.
+  해시 구문에서는 다음 두가지 스타일이 허용된다.
 
   ```Ruby
   # 좋은 예 -  {뒤와 }앞에 스페이스
@@ -2655,7 +2655,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-trailing-array-commas"></a>
-  배열이나 해쉬의 마지막 항목에 컴마를 사용하지 마라. 특히 항목이 여러 줄로 나뉘어져 있는 경우가 아니라면 더
+  배열이나 해시의 마지막 항목에 컴마를 사용하지 마라. 특히 항목이 여러 줄로 나뉘어져 있는 경우가 아니라면 더
   사용하지 마라.
 <sup>[[link](#no-trailing-array-commas)]</sup>
 
@@ -2694,7 +2694,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#set-vs-array)]</sup>
 
 * <a name="symbols-as-keys"></a>
-  해쉬 키는 문자열 보다 심볼을 사용하는 것이 좋다.
+  해시 키는 문자열 보다 심볼을 사용하는 것이 좋다.
 <sup>[[link](#symbols-as-keys)]</sup>
 
   ```Ruby
@@ -2706,11 +2706,11 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-mutable-keys"></a>
-  변경 가능한 객체를 해쉬 키로 사용하지 마라.
+  변경 가능한 객체를 해시 키로 사용하지 마라.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  해쉬 키가 심볼인 경우 Ruby 1.9 해쉬 리터를을 사용해라.
+  해시 키가 심볼인 경우 Ruby 1.9 해시 리터를을 사용해라.
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
@@ -2722,8 +2722,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-mixed-hash-syntaces"></a>
-  하나의 해쉬에 Ruby 1.9 해쉬 문법과 기존 해쉬 문법 섞어 쓰지 마라. 심볼이 아닌 키가 포함되어 있다면
-  이전의 해쉬 문법을 사용해라.
+  하나의 해시에 Ruby 1.9 해시 문법과 기존 해시 문법 섞어 쓰지 마라. 심볼이 아닌 키가 포함되어 있다면
+  이전의 해시 문법을 사용해라.
 <sup>[[link](#no-mixed-hash-syntaces)]</sup>
 
   ```Ruby
@@ -2751,7 +2751,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-fetch"></a>
-  해쉬 키로 명확히 있어야하는 값을 다룰 때에는 `Hash#fetch`를 사용해라.
+  해시 키로 명확히 있어야하는 값을 다룰 때에는 `Hash#fetch`를 사용해라.
 <sup>[[link](#hash-fetch)]</sup>
 
   ```Ruby
@@ -2765,7 +2765,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-fetch-defaults"></a>
-  해쉬 값에 기본 값을 사용하는 경우 커스텀 로직 보다는 `Hash#fetch`를 사용해라.
+  해시 값에 기본 값을 사용하는 경우 커스텀 로직 보다는 `Hash#fetch`를 사용해라.
 <sup>[[link](#hash-fetch-defaults)]</sup>
 
   ```Ruby
@@ -2794,7 +2794,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-values-at"></a>
-  해쉬에서 여러개의 값을 가져오고 싶다면 `Hash#values_at`을 사용해라.
+  해시에서 여러개의 값을 가져오고 싶다면 `Hash#values_at`을 사용해라.
 <sup>[[link](#hash-values-at)]</sup>
 
   ```Ruby
@@ -2807,7 +2807,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="ordered-hashes"></a>
-  Ruby 1.9의 해쉬는 순서가 보장 된다는 것을 기억하자.
+  Ruby 1.9의 해시는 순서가 보장 된다는 것을 기억하자.
 <sup>[[link](#ordered-hashes)]</sup>
 
 * <a name="no-modifying-collections"></a>
@@ -3050,7 +3050,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="gsub-blocks"></a>
-  `sub`/`gsub`를 사용해서 복잡한 치환을 하는 경우 블럭이나 해쉬를 사용할 수 있다.
+  `sub`/`gsub`를 사용해서 복잡한 치환을 하는 경우 블럭이나 해시를 사용할 수 있다.
 <sup>[[link](#gsub-blocks)]</sup>
 
 ## 퍼센트 리터럴
@@ -3228,7 +3228,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#always-warn)]</sup>
 
 * <a name="no-optional-hash-params"></a>
-  Optional 파라미터로 해쉬를 사용하지 않는다. (객체 생성자는 이 규칙에서 예외다.)
+  Optional 파라미터로 해시를 사용하지 않는다. (객체 생성자는 이 규칙에서 예외다.)
 <sup>[[link](#no-optional-hash-params)]</sup>
 
 * <a name="short-methods"></a>
