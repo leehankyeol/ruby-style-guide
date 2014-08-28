@@ -1556,7 +1556,7 @@ PDF나 HTML로 복사해갈 수 있다.
   if x == nil
   end
 
-  # 좋은예
+  # 좋은 예
   if x.even?
   end
 
