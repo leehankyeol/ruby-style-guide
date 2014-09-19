@@ -113,7 +113,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="crlf"></a>
-  Unix스타일로 줄바꿈 해라. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어있다. Windows 사용자에겐 특히 주의가 필요하다.)
+  Unix스타일로 줄바꿈 하라. (*BSD/Solaris/Linux/OS X 사용자들은 기본으로 설정되어있다. Windows 사용자에겐 특히 주의가 필요하다.)
 <sup>[[link](#crlf)]</sup>
 
   * 만약 Git을 사용하고 있으면, 다음 설정을 추가함으로써  프로젝트가 Windows 줄바꿈 형식으로
@@ -295,7 +295,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="indent-conditional-assignment"></a>
   조건식의 결과를 변수에 대입하는 경우,
-  그 가지(case)의 일반적인 정렬을 유지해라.
+  그 가지(case)의 일반적인 정렬을 유지하라.
 <sup>[[link](#indent-conditional-assignment)]</sup>
 
   ```Ruby
@@ -390,7 +390,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="spaces-around-equals"></a>
   메소드의 인수에 기본 값을 대입할 때에는,
-  `=`연산자 주변에 스페이스를 이용해라:
+  `=`연산자 주변에 스페이스를 이용하라:
 <sup>[[link](#spaces-around-equals)]</sup>
 
   ```Ruby
@@ -504,7 +504,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="align-multiline-arrays"></a>
-  여러 줄에 걸친 배열 요소들을 정리해라.
+  여러 줄에 걸친 배열 요소들을 정리하라.
 <sup>[[link](#align-multiline-arrays)]</sup>
 
   ```Ruby
@@ -574,7 +574,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="double-colons"></a>
   `::`는 상수(클래스나 모듈 포함)와
-   생성자(`Array()` 또는 `Nokogiri::HTML()`같은)를 참조할 때만 사용해라.
+   생성자(`Array()` 또는 `Nokogiri::HTML()`같은)를 참조할 때만 사용하라.
   일반 메소드 호출에서는 절대 `::`를 쓰지 마라.
 <sup>[[link](#double-colons)]</sup>
 
@@ -712,7 +712,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-1.8-if-syntax"></a>
-  `if x: ...`는 절대 사용하면 안된다. - Ruby 1.9에서 없어졌다. 대신 삼항연산자를 사용해라.
+  `if x: ...`는 절대 사용하면 안된다. - Ruby 1.9에서 없어졌다. 대신 삼항연산자를 사용하라.
 <sup>[[link](#no-1.8-if-syntax)]</sup>
 
   ```Ruby
@@ -724,7 +724,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-semicolon-ifs"></a>
-  `if x; ...`는 절대 사용하지마라. 대신 삼항연산자를 사용해라.
+  `if x; ...`는 절대 사용하지마라. 대신 삼항연산자를 사용하라.
 <sup>[[link](#no-semicolon-ifs)]</sup>
 
 * <a name="use-if-case-returns"></a>
@@ -749,7 +749,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="one-line-cases"></a>
-  하나의 행의 경우에는 `when x then ...`를 이용해라.
+  하나의 행의 경우에는 `when x then ...`를 이용하라.
   대안인 `when x:...`은 Ruby 1.9부터 없어졌다.
 <sup>[[link](#one-line-cases)]</sup>
 
@@ -986,7 +986,7 @@ PDF나 HTML로 복사해갈 수 있다.
 * <a name="loop-with-break"></a>
   종결조건을 나중에 판정하는 루프를 쓸 때,
   `begin/end/until` 또는 `begin/end/while`보다는
-  `Kernel#loop`와 `break`를 사용해라.
+  `Kernel#loop`와 `break`를 사용하라.
 <sup>[[link](#loop-with-break)]</sup>
 
   ```Ruby
@@ -1708,7 +1708,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="camelcase-classes"></a>
   클래스와 모듈에 대해서는 `CamelCase`(카멜표기)를 사용하라.
-  (HTTP,RFC,XML와 같은 약어는 대문자로 유지해라)
+  (HTTP,RFC,XML와 같은 약어는 대문자로 유지하라)
 <sup>[[link](#camelcase-classes)]</sup>
 
   ```Ruby
@@ -1746,7 +1746,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#snake-case-dirs)]</sup>
 
 * <a name="one-class-per-file"></a>
-  되도록이면 하나의 소스파일은 하나의 클래스/모듈을 갖도록 해라.
+  되도록이면 하나의 소스파일은 하나의 클래스/모듈을 갖도록 하라.
   파일명은 `CamelCase`로 적힌 클래스/모듈이름을 `snake_case`로 바꾼 것으로 하라.
 <sup>[[link](#one-class-per-file)]</sup>
 
@@ -1820,11 +1820,11 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="reduce-blocks"></a>
   짧은 블럭과 함께 `reduce`를 쓸 때에는,
-  인수 이름을 `|a, e|`로 해라.(accumulator, element)
+  인수 이름을 `|a, e|`로 하라.(accumulator, element)
 <sup>[[link](#reduce-blocks)]</sup>
 
 * <a name="other-arg"></a>
-  이항 연산자를 정의할 때에는, 인수 이름을 `other`로 해라.
+  이항 연산자를 정의할 때에는, 인수 이름을 `other`로 하라.
   (`<<`와 `[]`는 의미가 달라지므로 이 규칙에서 제외된다.)
 <sup>[[link](#other-arg)]</sup>
 
@@ -1857,7 +1857,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="flat-map"></a>
-  `map`+`flatten`의 조합을 사용하는 것 대신 `flat_map`를 사용해라.
+  `map`+`flatten`의 조합을 사용하는 것 대신 `flat_map`를 사용하라.
   이것은 2차 이상의 배열에는 적용되지는 않는다.
   다시 말해서, `users.first.songs == ['a', ['b','c']]` 이 경우는
   `flat_map`보다는 `map + flatten`를 사용하라.
@@ -1925,7 +1925,7 @@ PDF나 HTML로 복사해갈 수 있다.
 > -- Russ Olsen
 
 * <a name="refactor-dont-comment"></a>
-  나쁜 코드에 대해서 주석을 달지 마라. 코드가 스스로 설명할 수 있도록 리펙토링 해라.
+  나쁜 코드에 대해서 주석을 달지 마라. 코드가 스스로 설명할 수 있도록 리펙토링 하라.
   (하거나 안하거나 둘 중 하나다. - '시험삼아 한다'는 것은 없다. -- Yoda)
 <sup>[[link](#refactor-dont-comment)]</sup>
 
@@ -2684,11 +2684,11 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="first-and-last"></a>
-  배열의 첫번째나 마지막 항목에 접근할 때 `[0]` 또는 `[-1]` 대신 `first` 나 `last`를 사용해라.
+  배열의 첫번째나 마지막 항목에 접근할 때 `[0]` 또는 `[-1]` 대신 `first` 나 `last`를 사용하라.
 <sup>[[link](#first-and-last)]</sup>
 
 * <a name="set-vs-array"></a>
-  유일한 항목을 다룰 때는 `Array` 대신 `Set`을 사용해라. `Set`은 중복이 없고 정렬되지 않은 항목을
+  유일한 항목을 다룰 때는 `Array` 대신 `Set`을 사용하라. `Set`은 중복이 없고 정렬되지 않은 항목을
   다룰 수 있는 컬렉션 구현체이다. `Set`은 배열의 직관적인 동작들과 `Hash`의 빠른 조회 특성을 모두 가지고
   있다.
 <sup>[[link](#set-vs-array)]</sup>
@@ -2710,7 +2710,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  해시 키가 심볼인 경우 Ruby 1.9 해시 리터를을 사용해라.
+  해시 키가 심볼인 경우 Ruby 1.9 해시 리터를을 사용하라.
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
@@ -2723,7 +2723,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="no-mixed-hash-syntaces"></a>
   하나의 해시에 Ruby 1.9 해시 문법과 기존 해시 문법 섞어 쓰지 마라. 심볼이 아닌 키가 포함되어 있다면
-  이전의 해시 문법을 사용해라.
+  이전의 해시 문법을 사용하라.
 <sup>[[link](#no-mixed-hash-syntaces)]</sup>
 
   ```Ruby
@@ -2735,7 +2735,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-key"></a>
-  `Hash#has_key?` 대신 `Hash#key?`, `Hash#has_value?` 대신 `Hash#value?`를 사용해라.
+  `Hash#has_key?` 대신 `Hash#key?`, `Hash#has_value?` 대신 `Hash#value?`를 사용하라.
   Matz에 의하면 긴 문법은 페지하는 것을 논의 중이다.
   [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765)
 <sup>[[link](#hash-key)]</sup>
@@ -2751,7 +2751,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-fetch"></a>
-  해시 키로 명확히 있어야하는 값을 다룰 때에는 `Hash#fetch`를 사용해라.
+  해시 키로 명확히 있어야하는 값을 다룰 때에는 `Hash#fetch`를 사용하라.
 <sup>[[link](#hash-fetch)]</sup>
 
   ```Ruby
@@ -2765,7 +2765,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-fetch-defaults"></a>
-  해시 값에 기본 값을 사용하는 경우 커스텀 로직 보다는 `Hash#fetch`를 사용해라.
+  해시 값에 기본 값을 사용하는 경우 커스텀 로직 보다는 `Hash#fetch`를 사용하라.
 <sup>[[link](#hash-fetch-defaults)]</sup>
 
   ```Ruby
@@ -2794,7 +2794,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="hash-values-at"></a>
-  해시에서 여러개의 값을 가져오고 싶다면 `Hash#values_at`을 사용해라.
+  해시에서 여러개의 값을 가져오고 싶다면 `Hash#values_at`을 사용하라.
 <sup>[[link](#hash-values-at)]</sup>
 
   ```Ruby
@@ -2926,7 +2926,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="concat-strings"></a>
-  큰 문자열 데이터가 필요할 때 `String#+`를 사용하지 마라. 대신 `String#<<`를 사용해라. 문자열 자체를
+  큰 문자열 데이터가 필요할 때 `String#+`를 사용하지 마라. 대신 `String#<<`를 사용하라. 문자열 자체를
   변경하는 것이 새로운 문자열 객체를 생성하는 `String#+`보다 항상 빠르다.
 <sup>[[link](#concat-strings)]</sup>
 
@@ -2976,7 +2976,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="non-capturing-regexp"></a>
-  정규식 그룹에서 값을 뽑아서 사용하지 않는다면 non-capturing 그룹을 사용해라.
+  정규식 그룹에서 값을 뽑아서 사용하지 않는다면 non-capturing 그룹을 사용하라.
 <sup>[[link](#non-capturing-regexp)]</sup>
 
   ```Ruby
@@ -2986,7 +2986,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="no-perl-regexp-last-matchers"></a>
   정규식 그룹에서 값을 사용할 때 (`$1`, `$2`, etc) 처럼 암호문 같은 펄 변수 기호를 사용하지 마라.
-  대신 `Regexp.last_match[n]`를 사용해라.
+  대신 `Regexp.last_match[n]`를 사용하라.
 <sup>[[link](#no-perl-regexp-last-matchers)]</sup>
 
   ```Ruby
@@ -3232,7 +3232,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#no-optional-hash-params)]</sup>
 
 * <a name="short-methods"></a>
-  메서드는 10줄을 넘지 않게 해라. 이상적으로 대부분의 메서드는 5줄 이하여야한다. 빈 줄은 제외한다.
+  메서드는 10줄을 넘지 않게 하라. 이상적으로 대부분의 메서드는 5줄 이하여야한다. 빈 줄은 제외한다.
 <sup>[[link](#short-methods)]</sup>
 
 * <a name="too-many-params"></a>
@@ -3240,11 +3240,11 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#too-many-params)]</sup>
 
 * <a name="private-global-methods"></a>
-  전역 메서드가 정말로 필요하다면 private으로 만들고 Kernel에 추가해라.
+  전역 메서드가 정말로 필요하다면 private으로 만들고 Kernel에 추가하라.
 <sup>[[link](#private-global-methods)]</sup>
 
 * <a name="instance-vars"></a>
-  전역 변수 대신에 모듈 변수를 사용해라.
+  전역 변수 대신에 모듈 변수를 사용하라.
 <sup>[[link](#instance-vars)]</sup>
 
   ```Ruby
@@ -3270,11 +3270,11 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#optionparser)]</sup>
 
 * <a name="time-now"></a>
-  현재 시스템 시간을 가져올 때 `Time.new` 대신 `Time.now`를 사용해라
+  현재 시스템 시간을 가져올 때 `Time.new` 대신 `Time.now`를 사용하라.
 <sup>[[link](#time-now)]</sup>
 
 * <a name="functional-code"></a>
-  코드에서 되도록 변경을 피하고 함수형 방식을 사용해라.
+  코드에서 되도록 변경을 피하고 함수형 방식을 사용하라.
 <sup>[[link](#functional-code)]</sup>
 
 * <a name="no-arg-mutations"></a>
@@ -3282,7 +3282,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#no-arg-mutations)]</sup>
 
 * <a name="three-is-the-number-thou-shalt-count"></a>
-  블럭안에 블럭을 포함할 때는 3단계 이상되지 않게 해라.
+  블럭안에 블럭을 포함할 때는 3단계 이상되지 않게 하라.
 <sup>[[link](#three-is-the-number-thou-shalt-count)]</sup>
 
 * <a name="be-consistent"></a>
@@ -3290,7 +3290,7 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#be-consistent)]</sup>
 
 * <a name="common-sense"></a>
-  상식에 맞게 해라.
+  상식에 맞게 하라.
 <sup>[[link](#common-sense)]</sup>
 
 ## 도구들
@@ -3335,7 +3335,7 @@ PDF나 HTML로 복사해갈 수 있다.
 # 공유합시다!
 
 커뮤니티 기반 스타일 가이드는 이걸 모르는 곳에서는 거의 쓸모가 없다.
-이 가이드를 친구나 동료들에게 트윗하거나 공유해라.
+이 가이드를 친구나 동료들에게 트윗하거나 공유하라.
 모든 댓글이나 의견, 제안은 우리가 이 가이드를 좀 더 좋게 만들 수 있다.
 가능한 한 더 좋은 가이드를 가지고 싶지 않은가?
 
