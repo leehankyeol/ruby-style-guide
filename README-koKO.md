@@ -1270,7 +1270,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-double-pipes-for-bools"></a>
-  boolean 변수에 대해서는 `||=`로 초기화하지 마세요.
+  boolean 변수에 대해서는 `||=`로 초기화하지 마라.
   (현재 변수가 `false`일 때, 무슨일이 일어나는지를 고려하라)
 <sup>[[link](#no-double-pipes-for-bools)]</sup>
 
