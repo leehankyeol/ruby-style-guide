@@ -1664,7 +1664,7 @@ PDF나 HTML로 복사해갈 수 있다.
 > -- Phil Karlton
 
 * <a name="english-identifiers"></a>
-  식별자는 영어로 씁니다.
+  식별자는 영어로 쓴다.
 <sup>[[link](#english-identifiers)]</sup>
 
   ```Ruby
