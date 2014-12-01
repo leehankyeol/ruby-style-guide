@@ -559,13 +559,13 @@ PDF나 HTML로 복사해갈 수 있다.
 <sup>[[link](#no-block-comments)]</sup>
 
   ```Ruby
-  # 좋은 예
+  # 나쁜 예
   =begin
   comment line
   another comment line
   =end
 
-  # 나쁜 예
+  # 좋은 예
   # comment line
   # another comment line
   ```
