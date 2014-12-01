@@ -1265,12 +1265,12 @@ PDF나 HTML로 복사해갈 수 있다.
   # 나쁜 예
   name = 'Bozhidar' unless name
 
-  # 좋은 예 - name이 nil이나 false가 아니면 Bozhidar로 초기화합니다.
+  # 좋은 예 - name이 nil이나 false가 아니면 Bozhidar로 초기화한다.
   name ||= 'Bozhidar'
   ```
 
 * <a name="no-double-pipes-for-bools"></a>
-  boolean 변수에 대해서는 `||=`로 초기화하지 마세요.
+  boolean 변수에 대해서는 `||=`로 초기화하지 마라.
   (현재 변수가 `false`일 때, 무슨일이 일어나는지를 고려하라)
 <sup>[[link](#no-double-pipes-for-bools)]</sup>
 
@@ -1664,7 +1664,7 @@ PDF나 HTML로 복사해갈 수 있다.
 > -- Phil Karlton
 
 * <a name="english-identifiers"></a>
-  식별자는 영어로 씁니다.
+  식별자는 영어로 쓴다.
 <sup>[[link](#english-identifiers)]</sup>
 
   ```Ruby
@@ -1952,7 +1952,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="rare-eol-annotations"></a>
-  설명이 명확하지 않고 중복되는 경우 예외적으로 라인 뒷쪽에 어노테이션을 작성합니다. (규칙은 아님)
+  설명이 명확하지 않고 중복되는 경우 예외적으로 라인 뒷쪽에 어노테이션을 작성한다. (규칙은 아님)
 <sup>[[link](#rare-eol-annotations)]</sup>
 
   ```Ruby
@@ -2076,7 +2076,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="modules-vs-classes"></a>
   클래스 메서드만 가지는 클래스는 모듈로 선언하는 것이 더 좋다. 클래스는 인스턴스를 생성해서 사용할 때만
-  사용합니다.
+  사용한다.
 <sup>[[link](#modules-vs-classes)]</sup>
 
   ```Ruby
@@ -2105,7 +2105,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 * <a name="module-function"></a>
   모듈의 인스턴스 메서드를 클래스 메서드로 바꿀 때는 `extend self`보다 `module_function`을 더
-  선호합니다.
+  선호한다.
 <sup>[[link](#module-function)]</sup>
 
   ```Ruby
@@ -2957,7 +2957,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 ## 정규식
 
-> 어떤 사람들은 문제에 직면했을 때 다음과 같이 생각합니다.<br/>
+> 어떤 사람들은 문제에 직면했을 때 다음과 같이 생각한다.<br/>
 > "음 알았어, 난 정규식을 사용 할 거야." 이제 그들에게는 두개의 문제가 생겼다.<br/>
 > -- Jamie Zawinski
 
