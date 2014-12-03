@@ -3,7 +3,7 @@
 > 롤 모델이 중요하다.<br/>
 > -- Officer Alex J. Murphy / RoboCop
 
-루비 개발자로써 항상 한가지 문제로 괴로웠다. - 파이썬 개발자들은 훌륭한 프로그래밍 스타일 가이드([PEP-8](http://www.python.org/dev/peps/pep-0008/))
+루비 개발자로써 항상 한가지 문제로 괴로웠다. - 파이썬 개발자들은 훌륭한 프로그래밍 스타일 가이드([PEP-8][])
 를 가지고 있는데, 우리에겐 코딩 스타일과 모범 사례를 가진 공식적인 가이드가 전혀 없다는 것이다.
 그리고 나는 그것이야말로 문제라고 확신한다.
 또한 루비의 훌륭한 해커 커뮤니티는 모두가 탐낼만한 문서를 만들어낼 능력이 있다고 확신한다.
@@ -21,7 +21,7 @@
 
 한가지 더, Rails에 관심 있는 사람이라면,
 추가적으로 필요한 부분은
-[Ruby on Rails 3 & 4 Style Guide](https://github.com/bbatsov/rails-style-guide)을
+[Ruby on Rails Style Guide][rails-style-guide]을
 참고하면 된다.
 
 # 루비 스타일 가이드
@@ -38,8 +38,8 @@
 이 모든 규칙들이 갑자기 제시되지는 않았다. 이 것들 대부분이
 내 전문분야인 소프트웨어 엔지니어로써의 수 많은 경험,루비커뮤니티원들의 제안,
 또한 높은 평가를 받고있는 프로그래밍 리소스인
-["Programming Ruby 1.9"](http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0)과
-["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177)
+["Programming Ruby 1.9"][pickaxe]과
+["The Ruby Programming Language"][trpl]
 를 기반이 되었다.
 
 특정 스타일에 대해서 Ruby커뮤니티의 명백한 합의를 얻지 못한 부분도 있다.
@@ -47,14 +47,18 @@
 이러한 시나리오에서는 모든 유명한 스타일들이 허용되므로,
 어떤 것을 사용할지는 당신이 선택하고 적용하기 나름이다.
 
-이 가이드는 아직 완성되지 않았다. - 몇 가지 규칙은 예제가 없고,
-몇 가지 규칙은 충분하고 명확한 설명이 없다.
-이러한 문제들은 곧 해결될 것이다. - 일단 그렇다는 걸 기억하고 있으면 된다.
 
-이 가이드는 [Transmuter](https://github.com/TechnoGate/transmuter)를 통해
+이 가이드라인은 시간에 따라 진화한다. 새로운 규칙이 확인되고, 오래된
+규칙은 루비가 변함에 따라 쓸모 없어진다.
+
+많은 프로젝트들이 (대게 여기서 유래된) 그들만의 코딩 스타일 가이드라인
+을 가진다. 상충하는 부분이 있을 경우, 그 프로젝트에선 프로젝트의 가이드
+라인을 우선하라.
+
+이 가이드는 [Transmuter][]를 통해
 PDF나 HTML로 복사해갈 수 있다.
 
-[RuboCop](https://github.com/bbatsov/rubocop)은 이 스타일 가이드에 기반한
+[RuboCop][]은 이 스타일 가이드에 기반한
 코드 분석기다.
 
 이 가이드의 번역은 다음의 언어들로 되어있다.
@@ -62,12 +66,13 @@ PDF나 HTML로 복사해갈 수 있다.
 * [Chinese Simplified](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md)
 * [Chinese Traditional](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
 * [French](https://github.com/porecreat/ruby-style-guide/blob/master/README-frFR.md)
+* [German](https://github.com/arbox/ruby-style-guide/blob/master/README-deDE.md)
 * [Japanese](https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md)
+* [한국어](https://github.com/dalzony/ruby-style-guide/blob/master/README.md)
 * [Portuguese](https://github.com/rubensmabueno/ruby-style-guide/blob/master/README-PT-BR.md)
 * [Russian](https://github.com/arbox/ruby-style-guide/blob/master/README-ruRU.md)
 * [Spanish](https://github.com/alemohamad/ruby-style-guide/blob/master/README-esLA.md)
 * [Vietnamese](https://github.com/scrum2b/ruby-style-guide/blob/master/README-viVN.md)
-* [한국어](https://github.com/dalzony/ruby-style-guide/blob/master/README.md)
 
 ## Table of Contents
 
@@ -261,6 +266,20 @@ PDF나 HTML로 복사해갈 수 있다.
   # 좋은 예
   !something
   ```
+
+* <a name="no-space-inside-range-literals"></a>
+  레인지문에는 스페이스가 없음.
+<sup>[[link](#no-space-inside-range-literals)]</sup>
+
+    ```Ruby
+    # 나쁜 예
+    1 .. 3
+    'a' ... 'z'
+
+    # 좋은 예
+    1..3
+    'a'..'z'
+    ```
 
 * <a name="indent-when-to-case"></a>
   `when`은 `case`와 같은 깊이로 들여 쓰자. 많은 사람들이 동의할 수 없다는 것을 알지만,
@@ -575,7 +594,7 @@ PDF나 HTML로 복사해갈 수 있다.
 * <a name="double-colons"></a>
   `::`는 상수(클래스나 모듈 포함)와
    생성자(`Array()` 또는 `Nokogiri::HTML()`같은)를 참조할 때만 사용하라.
-  일반 메소드 호출에서는 절대 `::`를 쓰지 마라.
+  일반 메소드 호출에서는 `::`를 쓰지 마라.
 <sup>[[link](#double-colons)]</sup>
 
   ```Ruby
@@ -591,8 +610,8 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="method-parens"></a>
-  인수가 있을 때 `def`와 괄호를 함께 사용하라.
-  받을 인수가 없을 때에는, 괄호를 제거 하라.
+  파라메터가 있을 때 `def`와 괄호를 함께 사용하라.
+  받을 파라메터가 없을 때에는, 괄호를 제거 하라.
 <sup>[[link](#method-parens)]</sup>
 
    ```Ruby
@@ -607,12 +626,12 @@ PDF나 HTML로 복사해갈 수 있다.
    end
 
    # 나쁜 예
-   def some_method_with_arguments arg1, arg2
+   def some_method_with_parameters param1, param2
      # body omitted
    end
 
    # 좋은 예
-   def some_method_with_arguments(arg1, arg2)
+   def some_method_with_parameters(param1, param2)
      # body omitted
    end
    ```
@@ -645,7 +664,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-then"></a>
-  `if/unless`문의 내용이 여러줄일 때에는`then`을 절대 쓰지마라.
+  `if/unless`문의 내용이 여러줄일 때에는`then`을 쓰지마라.
 <sup>[[link](#no-then)]</sup>
 
   ```Ruby
@@ -710,22 +729,17 @@ PDF나 HTML로 복사해갈 수 있다.
     something_else
   end
   ```
-
-* <a name="no-1.8-if-syntax"></a>
-  `if x: ...`는 절대 사용하면 안된다. - Ruby 1.9에서 없어졌다. 대신 삼항연산자를 사용하라.
-<sup>[[link](#no-1.8-if-syntax)]</sup>
+* <a name="no-semicolon-ifs"></a>
+  `if x; ...`는 사용하지마라. 대신 삼항연산자를 사용하라.
+<sup>[[link](#no-semicolon-ifs)]</sup>
 
   ```Ruby
   # 나쁜 예
-  result = if some_condition: something else something_else end
+  result = if some_condition; something else something_else end
 
   # 좋은 예
   result = some_condition ? something : something_else
   ```
-
-* <a name="no-semicolon-ifs"></a>
-  `if x; ...`는 절대 사용하지마라. 대신 삼항연산자를 사용하라.
-<sup>[[link](#no-semicolon-ifs)]</sup>
 
 * <a name="use-if-case-returns"></a>
   `if`와 `case`은 결과를 반환하는 표현식이라는 사실을 이용하라.
@@ -913,7 +927,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-multiline-while-do"></a>
-  `while/until`문의 내용이 여러줄일 때에는, `while/until condition do`를 절대 쓰지 마라.
+  `while/until`문의 내용이 여러줄일 때에는, `while/until condition do`를 쓰지 마라.
 <sup>[[link](#no-multiline-while-do)]</sup>
 
   ```Ruby
@@ -1005,11 +1019,11 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="no-dsl-parens"></a>
-  메소드가 다음 세 가지인 경우 인수를 감싸는 괄호를 생략하라.
+  메소드가 다음 세 가지인 경우 파라메터를 감싸는 괄호를 생략하라.
   1. 내장 DSL(예를들어 Rake, Rails, RSpec 등)의 일부인 메소드
   2. 루비에서 "키워드" 역할을 하고 있는 메서드 (예를들어 `attr_reader`, `puts`)
   3. attribute 접근 메서드
-  이외의 다른 모든 메서드 호출시 사용되는 인수들은 괄호로 감싸야 한다.
+  이외의 다른 모든 메서드 호출시 사용되는 파라메터들은 괄호로 감싸야 한다.
 <sup>[[link](#no-dsl-parens)]</sup>
 
   ```Ruby
@@ -1295,7 +1309,7 @@ PDF나 HTML로 복사해갈 수 있다.
   end
 
   # 나쁜 예
-  something = something ? nil : something.downcase
+  something = something ? something.downcase : nil
 
   # 괜찮은 예
   something = something.downcase if something
@@ -1326,6 +1340,20 @@ PDF나 HTML로 복사해갈 수 있다.
   some_string =~ /something/
   ```
 
+* <a name="eql"></a>
+  `==`로 할수 있을 때에는 `eql?`을 사용하지 마라. `eql?`이 제공하는 엄격한
+  비교는 거의 필요가 없다.
+<sup>[[link](#eql)]</sup>
+
+  ```Ruby
+  # bad - eql? is the same as == for strings
+  "ruby".eql? some_str
+
+  # good
+  "ruby" == some_str
+  1.0.eql? x # eql? makes sense here if want to differentiate between Fixnum and Float 1
+  ```
+
 * <a name="no-cryptic-perlisms"></a>
   Perl스타일의 특수 변수(`$:`, `$;`등과 같은 것들)사용을 피하라.
   그들은 상당히 기괴해보이고, one-liner 스크립트외의 그것들의 사용은 의지를 꺾는다.
@@ -1342,7 +1370,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="parens-no-spaces"></a>
-  메소드 이름과 괄호사이에 공백을 절대 넣지 마라.
+  메소드 이름과 괄호사이에 공백을 넣지 마라.
 <sup>[[link](#parens-no-spaces)]</sup>
 
   ```Ruby
@@ -1657,6 +1685,57 @@ PDF나 HTML로 복사해갈 수 있다.
   end
   ```
 
+* <a name="map-fine-select-reduce-size"></a>
+  `collect`보다는 `map`을, `detect`보다는 `find`를, `find_all`보다는 `select`를,
+  `inject`보다는 `reduce`를, `length`보다는 `size`를 권장한다.
+  이것이 무리한 요구는 아니다; 다른 alias를 써서 가독성이 좋아진다면, 그것도 괜찮다.
+  메소드의 시적인 표현은 Samlltalk언어로 부터 물려받은 것으로, 일반적인 다른 프로그래밍 언어와는 다르다.
+  `select`를 사용하는 이유는 `reject`와 함께 쓰일 때
+  `find_all`보다 좀 더 잘 어울리고 이름 자체가 충분한 설명이되기 때문이다.
+<sup>[[link](#map-fine-select-reduce-size)]</sup>
+
+* <a name="count-vs-size"></a>
+  `size`를 대신해서 `count`를 쓰지 마라. `Array`외의 `Enumerable`객체들은
+  크기를 결정하기 위해 모든 콜렉션을 반복한다.
+<sup>[[link](#count-vs-size)]</sup>
+
+  ```Ruby
+  # 나쁜 예
+  some_hash.count
+
+  # 좋은 예
+  some_hash.size
+  ```
+
+* <a name="flat-map"></a>
+  `map`+`flatten`의 조합을 사용하는 것 대신 `flat_map`를 사용하라.
+  이것은 2차 이상의 배열에는 적용되지는 않는다.
+  다시 말해서, `users.first.songs == ['a', ['b','c']]` 이 경우는
+  `flat_map`보다는 `map + flatten`를 사용하라.
+  `flat_map`은 1차원의 배열만 1차원으로 만드는 반면, `flatten`은 모든것을 1차원 배열로 만든다.
+<sup>[[link](#flat-map)]</sup>
+
+  ```Ruby
+  # 나쁜 예
+  all_songs = users.map(&:songs).flatten.uniq
+
+  # 좋은 예
+  all_songs = users.flat_map(&:songs).uniq
+  ```
+
+* <a name="reverse-each"></a>
+  `reverse.each`보다는 `reverse_each`를 써라. `reverse_each`는
+  새로운 배열을 할당하지 않는다는 장점이 있다.
+<sup>[[link](#reverse-each)]</sup>
+
+  ```Ruby
+  # 나쁜 예
+  array.reverse.each { ... }
+
+  # 좋은 예
+  array.reverse_each { ... }
+  ```
+
 ## 네이밍
 
 > 프로그래밍에서 단지 진짜로 어려운 것들은 캐시무효화와
@@ -1823,66 +1902,15 @@ PDF나 HTML로 복사해갈 수 있다.
   인수 이름을 `|a, e|`로 하라.(accumulator, element)
 <sup>[[link](#reduce-blocks)]</sup>
 
-* <a name="other-arg"></a>
-  이항 연산자를 정의할 때에는, 인수 이름을 `other`로 하라.
+* <a name="other-param"></a>
+  이항 연산자를 정의할 때에는, 파라메터 이름을 `other`로 하라.
   (`<<`와 `[]`는 의미가 달라지므로 이 규칙에서 제외된다.)
-<sup>[[link](#other-arg)]</sup>
+<sup>[[link](#other-param)]</sup>
 
   ```Ruby
   def +(other)
     # body omitted
   end
-  ```
-
-* <a name="map-fine-select-reduce-size"></a>
-  `collect`보다는 `map`을, `detect`보다는 `find`를, `find_all`보다는 `select`를,
-  `inject`보다는 `reduce`를, `length`보다는 `size`를 권장한다.
-  이것이 무리한 요구는 아니다; 다른 alias를 써서 가독성이 좋아진다면, 그것도 괜찮다.
-  메소드의 시적인 표현은 Samlltalk언어로 부터 물려받은 것으로, 일반적인 다른 프로그래밍 언어와는 다르다.
-  `select`를 사용하는 이유는 `reject`와 함께 쓰일 때
-  `find_all`보다 좀 더 잘 어울리고 이름 자체가 충분한 설명이되기 때문이다.
-<sup>[[link](#map-fine-select-reduce-size)]</sup>
-
-* <a name="count-vs-size"></a>
-  `size`를 대신해서 `count`를 쓰지 마라. `Array`외의 `Enumerable`객체들은
-  크기를 결정하기 위해 모든 콜렉션을 반복한다.
-<sup>[[link](#count-vs-size)]</sup>
-
-  ```Ruby
-  # 나쁜 예
-  some_hash.count
-
-  # 좋은 예
-  some_hash.size
-  ```
-
-* <a name="flat-map"></a>
-  `map`+`flatten`의 조합을 사용하는 것 대신 `flat_map`를 사용하라.
-  이것은 2차 이상의 배열에는 적용되지는 않는다.
-  다시 말해서, `users.first.songs == ['a', ['b','c']]` 이 경우는
-  `flat_map`보다는 `map + flatten`를 사용하라.
-  `flat_map`은 1차원의 배열만 1차원으로 만드는 반면, `flatten`은 모든것을 1차원 배열로 만든다.
-<sup>[[link](#flat-map)]</sup>
-
-  ```Ruby
-  # 나쁜 예
-  all_songs = users.map(&:songs).flatten.uniq
-
-  # 좋은 예
-  all_songs = users.flat_map(&:songs).uniq
-  ```
-
-* <a name="reverse-each"></a>
-  `reverse.each`보다는 `reverse_each`를 써라. `reverse_each`는
-  새로운 배열을 할당하지 않는다는 장점이 있다.
-<sup>[[link](#reverse-each)]</sup>
-
-  ```Ruby
-  # 나쁜 예
-  array.reverse.each { ... }
-
-  # 좋은 예
-  array.reverse_each { ... }
   ```
 
 ## 주석
@@ -2091,7 +2119,7 @@ PDF나 HTML로 복사해갈 수 있다.
   end
 
   # 좋은 예
-  module SomeClass
+  module SomeModule
     module_function
 
     def some_method
@@ -2421,11 +2449,9 @@ PDF나 HTML로 복사해갈 수 있다.
 
   ```Ruby
   def foo
-    begin
-      fail
-    ensure
-      return '매우 안좋은 생각'
-    end
+    fail
+  ensure
+    return '매우 안좋은 생각'
   end
   ```
 
@@ -2580,7 +2606,7 @@ PDF나 HTML로 복사해갈 수 있다.
   rescue Exception => e
     # 예외 처리
   rescue StandardError => e
-    # 여기는 절대 실행되지 않는다.
+    # 여기는 실행되지 않는다.
   end
 
   # good
@@ -2940,6 +2966,23 @@ PDF나 HTML로 복사해갈 수 있다.
   end
   ```
 
+* <a name="dont-abuse-gsub"></a>
+  다른 더 빠른 대안이 있을 때 `String#gsub`를 사용하지 마라.
+<sup>[[link](#dont-abuse-gsub)]</sup>
+
+    ```Ruby
+    url = 'http://example.com'
+    str = 'lisp-case-rules'
+
+    # 나쁜 예
+    url.gsub("http://", "https://")
+    str.gsub("-", "_")
+
+    # 좋은 예
+    url.sub("http://", "https://")
+    str.tr("-", "_")
+    ```
+
 * <a name="heredocs"></a>
   여러 줄로 heredocs를 사용할 때 공백 문자들이 유지된다는 사실을 잊지 말자. 특정 기준을 정하고 나머지
   불필요한 공백을 모두 없애는 것이 좋은 방법이다.
@@ -3174,11 +3217,11 @@ PDF나 HTML로 복사해갈 수 있다.
   UNSAFE_STRING_METHODS.each do |unsafe_method|
     if 'String'.respond_to?(unsafe_method)
       class_eval <<-EOT, __FILE__, __LINE__ + 1
-        def #{unsafe_method}(*args, &block)       # def capitalize(*args, &block)
-          to_str.#{unsafe_method}(*args, &block)  #   to_str.capitalize(*args, &block)
+        def #{unsafe_method}(*params, &block)       # def capitalize(*params, &block)
+          to_str.#{unsafe_method}(*params, &block)  #   to_str.capitalize(*params, &block)
         end                                       # end
 
-        def #{unsafe_method}!(*args)              # def capitalize!(*args)
+        def #{unsafe_method}!(*params)              # def capitalize!(*params)
           @dirty = true                           #   @dirty = true
           super                                   #   super
         end                                       # end
@@ -3201,7 +3244,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
     ```ruby
     # 나쁜 예
-    def method_missing?(meth, *args, &block)
+    def method_missing?(meth, *params, &block)
       if /^find_by_(?<prop>.*)/ =~ meth
         # ... find_by 하는 코드가 많이
       else
@@ -3210,9 +3253,9 @@ PDF나 HTML로 복사해갈 수 있다.
     end
 
     # 좋은 예
-    def method_missing?(meth, *args, &block)
+    def method_missing?(meth, *params, &block)
       if /^find_by_(?<prop>.*)/ =~ meth
-        find_by(prop, *args, &block)
+        find_by(prop, *params, &block)
       else
         super
       end
@@ -3220,6 +3263,10 @@ PDF나 HTML로 복사해갈 수 있다.
 
     # 가장 좋은 것은 찾을 수 있는 모든 속성에 define_method를 선언하는 것이다.
     ```
+
+* <a name="prefer-public-send"></a>
+  `private`/`protected` 범위를 회피하지 않도록,`send`대신 `public_send` 를 사용한다.
+<sup>[[link](#prefer-public-send)]</sup>
 
 ## 그밖에
 
@@ -3277,9 +3324,9 @@ PDF나 HTML로 복사해갈 수 있다.
   코드에서 되도록 변경을 피하고 함수형 방식을 사용하라.
 <sup>[[link](#functional-code)]</sup>
 
-* <a name="no-arg-mutations"></a>
-  의도하지 않게 메서드 안에서 인수를 수정하면 안된다.
-<sup>[[link](#no-arg-mutations)]</sup>
+* <a name="no-param-mutations"></a>
+  의도하지 않게 메서드 안에서 파라메터를 수정하면 안된다.
+<sup>[[link](#no-param-mutations)]</sup>
 
 * <a name="three-is-the-number-thou-shalt-count"></a>
   블럭안에 블럭을 포함할 때는 3단계 이상되지 않게 하라.
@@ -3299,7 +3346,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
 ### RuboCop
 
-[RuboCop](https://github.com/bbatsov/rubocop)은 이 가이드를 기반으로 해서 루비 코드 스타일을
+[RuboCop][]은 이 가이드를 기반으로 해서 루비 코드 스타일을
 체크해준다. 이 가이드의 상당 부분을 커버하는 RuboCop은 MRI 1.9와 MRI 2.0을 지원하고 Emacs와 통합에
 좋다.
 
@@ -3334,6 +3381,11 @@ PDF나 HTML로 복사해갈 수 있다.
 
 # 공유합시다!
 
+이 가이드는 아직 완성되지 않았다. - 몇 가지 규칙은 예제가 없고,
+몇 가지 규칙은 충분하고 명확한 설명이 없다.  그런 룰을 보완하는것은 루비
+커뮤니티를 훌륭하게 (또 간단하게) 돕는 일이다.
+(바라건데) 이러한 문제들은 곧 해결될 것이다. - 일단 그렇다는 걸 기억하고 있으면 된다.
+
 커뮤니티 기반 스타일 가이드는 이걸 모르는 곳에서는 거의 쓸모가 없다.
 이 가이드를 친구나 동료들에게 트윗하거나 공유하라.
 모든 댓글이나 의견, 제안은 우리가 이 가이드를 좀 더 좋게 만들 수 있다.
@@ -3341,3 +3393,10 @@ PDF나 HTML로 복사해갈 수 있다.
 
 화이팅,<br/>
 [Bozhidar](https://twitter.com/bbatsov)
+
+[PEP-8]: http://www.python.org/dev/peps/pep-0008/
+[rails-style-guide]: https://github.com/bbatsov/rails-style-guide
+[pickaxe]: http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0
+[trpl]: http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177
+[transmuter]: https://github.com/TechnoGate/transmuter
+[RuboCop]: https://github.com/bbatsov/rubocop
