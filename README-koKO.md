@@ -2165,12 +2165,12 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="liskov"></a>
-  클래스 계층을 디자인 할때는 리스코프 치환 원칙(http://en.wikipedia.org/wiki/Liskov_substitution_principle) 을
+  클래스 계층을 디자인 할때는 [리스코프 치환 원칙](http://ko.wikipedia.org/wiki/리스코프_치환_원칙) 을
   따른다.
 <sup>[[link](#liskov)]</sup>
 
 * <a name="solid-design"></a>
-  클래스는 가능한한 SOLID(http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) 원칙을 따른다.
+  클래스는 가능한한 [SOLID](http://ko.wikipedia.org/wiki/SOLID) 원칙을 따른다.
 <sup>[[link](#solid-design)]</sup>
 
 * <a name="define-to-s"></a>
@@ -2277,7 +2277,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```
 
 * <a name="duck-typing"></a>
-  상속보다는 [duck-typing](http://en.wikipedia.org/wiki/Duck_typing)을 쓰는 것이 더 좋다.
+  상속보다는 [duck-typing](http://ko.wikipedia.org/wiki/덕_타이핑)을 쓰는 것이 더 좋다.
 <sup>[[link](#duck-typing)]</sup>
 
   ```Ruby
