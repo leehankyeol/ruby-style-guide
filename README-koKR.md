@@ -68,7 +68,7 @@ PDF나 HTML로 복사해갈 수 있다.
 * [French](https://github.com/porecreat/ruby-style-guide/blob/master/README-frFR.md)
 * [German](https://github.com/arbox/ruby-style-guide/blob/master/README-deDE.md)
 * [Japanese](https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md)
-* [한국어](https://github.com/dalzony/ruby-style-guide/blob/master/README.md)
+* [한국어](https://github.com/dalzony/ruby-style-guide/blob/master/README-koKR.md)
 * [Portuguese](https://github.com/rubensmabueno/ruby-style-guide/blob/master/README-PT-BR.md)
 * [Russian](https://github.com/arbox/ruby-style-guide/blob/master/README-ruRU.md)
 * [Spanish](https://github.com/alemohamad/ruby-style-guide/blob/master/README-esLA.md)
