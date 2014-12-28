@@ -278,7 +278,7 @@ PDF나 HTML로 복사해갈 수 있다.
 
     # 좋은 예
     1..3
-    'a'..'z'
+    'a'...'z'
     ```
 
 * <a name="indent-when-to-case"></a>
@@ -2400,6 +2400,69 @@ PDF나 HTML로 복사해갈 수 있다.
   end
   ```
 
+* <a name="alias-method-lexically"></a>
+  엘리아스 메서드가 문법적 클래스의 범위에 있고 이 문맥에서 `self`의 범위도
+  문법적이고 알리아스의 접근이 명시적이지 않을 때의 실행시나 서브 클래스에서
+  변경되지 않는 것을 유저가 명확히 이해할 때는`alias`를 사용한다.
+<sup>[[link](#alias-method-lexically)]</sup>
+
+  ```Ruby
+  class Westerner
+    def first_name
+      @names.first
+    end
+
+    alias given_name first_name
+  end
+  ```
+
+  `alias`가 `def`같은 키워드이기 때문에, 심볼이나 문자열 대신, 생 인자를
+  사용한다. 다시 말하면, `alias :foo :bar`대신 `alias foo bar`를 사용한다.
+
+  또 루비가 어떻게 알리아스와 상속을 처리하는지 알아야한다: 알리아스는
+  알리아스가 선언되었을 때의 메서드를 참조한다. 알리아스는 동적으로
+  전달 되지 않는다.
+
+  ```Ruby
+  class Fugitive < Westerner
+    def first_name
+      'Nobody'
+    end
+  end
+  ```
+
+  이 예제에서, `Fugitive#given_name`는 `Fugitive#first_name`가 아니라
+  여전히 원래의 `Westerner#first_name` 메서드를 호출한다.
+  `Fugitive#given_name`의 행동으로 오버라이드 하려면 파생된 클래스에서도
+  재정의 해주어야 한다.
+
+  ```Ruby
+  class Fugitive < Westerner
+    def first_name
+      'Nobody'
+    end
+
+    alias given_name first_name
+  end
+  ```
+
+* <a name="alias-method"></a>
+  모듈, 클래스, 싱글턴 클래스를 실행중에 알리아스 할때는 항상 `alias_method`
+  를 사용한다. 이런 경우에 `alias`의 문법적 범위로는 결과를 예측 하기 힘들다.
+<sup>[[link](#alias-method)]</sup>
+
+  ```Ruby
+  module Mononymous
+    def self.included(other)
+      other.class_eval { alias_method :full_name, :given_name }
+    end
+  end
+
+  class Sting < Westerner
+    include Mononymous
+  end
+  ```
+
 ## 예외
 
 * <a name="fail-method"></a>
@@ -2826,7 +2889,7 @@ PDF나 HTML로 복사해갈 수 있다.
   ```Ruby
   # 나쁜 예
   email = data['email']
-  nickname = data['nickname']
+  username = data['nickname']
 
   # 좋은 예
   email, username = data.values_at('email', 'nickname')
@@ -3307,10 +3370,6 @@ PDF나 HTML로 복사해갈 수 있다.
 
   Foo.bar = 1
   ```
-
-* <a name="alias-method"></a>
-  `alias_method`를 쓸 때는 `alias`는 피한다.
-<sup>[[link](#alias-method)]</sup>
 
 * <a name="optionparser"></a>
   복잡한 명령어 라인에서 인수를 가져올때 `OptionParser`를 사용하고 간단한 옵션은 `ruby -s`를 사용한다.
